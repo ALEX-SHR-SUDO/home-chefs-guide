@@ -10,7 +10,8 @@
     "lint": "next lint",
     "ocr:extract": "ts-node scripts/ocr-extract.ts",
     "ocr:batch": "ts-node scripts/ocr-batch-process.ts",
-    "ocr:validate": "ts-node scripts/ocr-validate-results.ts"
+    "ocr:validate": "ts-node scripts/ocr-validate-results.ts",
+    "ocr:test": "node scripts/test-ocr-setup.js"
   },
   "repository": {
     "type": "git",
