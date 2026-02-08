@@ -45,7 +45,11 @@ async function validateBlobMigration() {
     try {
       const recipesContent = await readFile(RECIPES_DATA_PATH, 'utf-8');
       const blobUrlRegex = /"image":\s*"(https:\/\/[^"]+\.public\.blob\.vercel-storage\.com[^"]+)"/g;
-      const matches = [...recipesContent.matchAll(blobUrlRegex)];
+      const matches: RegExpExecArray[] = [];
+      let match;
+      while ((match = blobUrlRegex.exec(recipesContent)) !== null) {
+        matches.push(match);
+      }
       
       if (matches.length === 0) {
         issues.push('No Blob URLs found in recipesData.ts');
