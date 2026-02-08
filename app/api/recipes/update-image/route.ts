@@ -37,8 +37,12 @@ export async function POST(request: NextRequest) {
     // In serverless environments, use /tmp (the only writable directory)
     // In local environments, use lib directory
     const backupDir = isServerlessEnvironment() ? '/tmp' : path.join(process.cwd(), 'lib');
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const backupPath = path.join(backupDir, `recipesData.backup.${timestamp}.ts`);
+    // Use simple timestamp to avoid accumulation issues in /tmp
+    // In serverless, this overwrites previous backup to prevent storage exhaustion
+    const backupFilename = isServerlessEnvironment() 
+      ? 'recipesData.backup.ts'  // Fixed filename for serverless (no accumulation)
+      : `recipesData.backup.${Date.now()}.ts`;  // Timestamped for local dev
+    const backupPath = path.join(backupDir, backupFilename);
     
     try {
       fs.writeFileSync(backupPath, fileContent);
