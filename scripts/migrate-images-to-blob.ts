@@ -14,8 +14,21 @@ interface MigrationMapEntry {
 
 const RECIPES_DIR = join(process.cwd(), 'public', 'images', 'recipes');
 const MIGRATION_MAP_PATH = join(process.cwd(), 'scripts', 'blob-migration-map.json');
-const BACKUP_DIR = join(process.cwd(), 'lib');
-const BACKUP_PATH = join(BACKUP_DIR, 'recipesData.backup.ts');
+
+/**
+ * Get backup directory - use /tmp for serverless/read-only environments
+ */
+function getBackupDir(): string {
+  // In serverless environments (like Vercel/Lambda), the filesystem is read-only
+  // except for /tmp. Use /tmp for such environments
+  if (process.cwd().startsWith('/var/task')) {
+    return '/tmp';
+  }
+  
+  return join(process.cwd(), 'lib');
+}
+
+const BACKUP_PATH = join(getBackupDir(), 'recipesData.backup.ts');
 
 async function migrateImagesToBlob() {
   console.log('🚀 Starting image migration to Vercel Blob...\n');
@@ -32,12 +45,13 @@ async function migrateImagesToBlob() {
     console.log('📦 Creating backup of recipesData.ts...');
     try {
       await copyFile(
-        join(BACKUP_DIR, 'recipesData.ts'),
+        join(process.cwd(), 'lib', 'recipesData.ts'),
         BACKUP_PATH
       );
       console.log(`✅ Backup created at ${BACKUP_PATH}\n`);
-    } catch (error) {
-      console.error('⚠️  Warning: Could not create backup:', error);
+    } catch (error: any) {
+      console.warn('⚠️  Warning: Could not create backup:', error.message);
+      console.warn('   Continuing migration without backup...\n');
     }
 
     // Read all images from recipes directory

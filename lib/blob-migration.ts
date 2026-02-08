@@ -19,8 +19,23 @@ export interface MigrationResult {
 }
 
 const RECIPES_DIR = join(process.cwd(), 'public', 'images', 'recipes');
-const BACKUP_DIR = join(process.cwd(), 'lib');
-const RECIPES_DATA_PATH = join(BACKUP_DIR, 'recipesData.ts');
+const RECIPES_DATA_PATH = join(process.cwd(), 'lib', 'recipesData.ts');
+
+/**
+ * Get backup directory - use /tmp for serverless/read-only environments
+ */
+function getBackupDir(): string {
+  // In serverless environments (like Vercel/Lambda), the filesystem is read-only
+  // except for /tmp. Check if we can write to the lib directory, otherwise use /tmp
+  const localBackupDir = join(process.cwd(), 'lib');
+  
+  // Use /tmp for serverless environments (indicated by /var/task path)
+  if (process.cwd().startsWith('/var/task')) {
+    return '/tmp';
+  }
+  
+  return localBackupDir;
+}
 
 /**
  * Get content type based on file extension
@@ -38,14 +53,24 @@ function getContentType(ext: string): string {
 
 /**
  * Create a backup of recipesData.ts before making changes
+ * Returns the backup path on success, or an error message on failure
  */
 export async function createBackup(): Promise<string> {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const backupPath = join(BACKUP_DIR, `recipesData.backup.${timestamp}.ts`);
+  const backupDir = getBackupDir();
+  const backupPath = join(backupDir, `recipesData.backup.${timestamp}.ts`);
   
-  await copyFile(RECIPES_DATA_PATH, backupPath);
-  
-  return backupPath;
+  try {
+    await copyFile(RECIPES_DATA_PATH, backupPath);
+    return backupPath;
+  } catch (error: any) {
+    // In serverless/read-only environments, backup may fail
+    // Log the error but don't fail the migration
+    console.warn('Warning: Could not create backup file:', error.message);
+    
+    // Return a descriptive message instead of throwing
+    return `Backup skipped (read-only filesystem): ${error.message}`;
+  }
 }
 
 /**
