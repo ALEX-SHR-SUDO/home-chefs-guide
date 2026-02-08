@@ -12,6 +12,7 @@ A modern, SEO-optimized recipe website with 380+ unique recipes, built with Next
 - Recipe JSON-LD structured data for rich search results
 - Print-friendly recipe cards
 - Social media sharing buttons
+- **🤖 OCR Automation** for extracting recipe data from images
 
 ### Categories
 1. Breakfast & Brunch (40 recipes)
@@ -119,13 +120,28 @@ home-chefs-guide/
 │   ├── RecipeCard.tsx             # Recipe card component
 │   ├── PrintButton.tsx            # Print recipe button
 │   └── ShareButtons.tsx           # Social sharing buttons
+├── scripts/
+│   ├── ocr-extract.ts             # OCR extraction script
+│   ├── ocr-batch-process.ts       # Batch OCR processing
+│   └── ocr-validate-results.ts    # OCR validation
+├── data/
+│   └── ocr-results/               # OCR extracted data
+│       ├── raw/                   # Raw OCR text
+│       ├── processed/             # Structured JSON
+│       └── logs/                  # Processing logs
+├── docs/
+│   └── OCR_GUIDE.md               # OCR automation guide
 ├── lib/
 │   ├── types.ts                   # TypeScript interfaces
 │   ├── recipes.ts                 # Recipe utilities
 │   └── recipesData.ts             # All 380+ recipes data
 ├── public/
 │   ├── images/                    # Image assets
+│   │   └── recipes/               # Recipe images
 │   └── favicon.svg                # Site favicon
+├── .github/
+│   └── workflows/
+│       └── ocr-process.yml        # OCR automation workflow
 ├── next.config.js                 # Next.js configuration
 ├── tailwind.config.ts             # Tailwind CSS configuration
 ├── tsconfig.json                  # TypeScript configuration
@@ -268,8 +284,9 @@ Target scores:
 
 ## 📝 Content Guidelines
 
-### Adding More Recipes
+### Adding New Recipes
 
+#### Manual Entry
 1. Open `lib/recipesData.ts`
 2. Add a new recipe object:
    ```typescript
@@ -298,6 +315,31 @@ Target scores:
    ```
 
 3. Rebuild the site: `npm run build`
+
+#### OCR Automation 🤖
+
+Extract recipe data automatically from images using our OCR system! See [OCR Guide](docs/OCR_GUIDE.md) for details.
+
+**Quick Start:**
+```bash
+# Process single image
+npm run ocr:extract -- recipe-name.jpg
+
+# Batch process all images
+npm run ocr:batch
+
+# Validate results
+npm run ocr:validate
+```
+
+**Features:**
+- ✅ Automated text extraction from recipe images (Tesseract.js)
+- ✅ AI-powered data structuring (OpenAI GPT-4)
+- ✅ Batch processing support
+- ✅ Data validation
+- ✅ GitHub Actions automation
+
+For complete setup and usage instructions, see [docs/OCR_GUIDE.md](docs/OCR_GUIDE.md).
 
 ## 📜 License
 

@@ -203,13 +203,13 @@ class RecipeValidator {
     if (recipe.cookTime === 0) {
       result.warnings.push('cookTime is 0 - may need manual review');
     }
-    if (recipe.ingredients.length === 0) {
+    if (recipe.ingredients && recipe.ingredients.length === 0) {
       result.warnings.push('No ingredients specified');
     }
-    if (recipe.instructions.length === 0) {
+    if (recipe.instructions && recipe.instructions.length === 0) {
       result.warnings.push('No instructions specified');
     }
-    if (recipe.nutrition.calories === 0) {
+    if (recipe.nutrition && recipe.nutrition.calories === 0) {
       result.warnings.push('No calorie information - may need manual review');
     }
 

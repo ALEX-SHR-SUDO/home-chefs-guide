@@ -46,6 +46,9 @@ const DEFAULT_CONFIG: OCRConfig = {
   confidenceThreshold: parseInt(process.env.OCR_CONFIDENCE_THRESHOLD || '60'),
 };
 
+// Maximum number of ingredients to extract as fallback
+const MAX_FALLBACK_INGREDIENTS = 10;
+
 // First 10 recipe images to process
 const TARGET_IMAGES = [
   'naan.jpg',
@@ -122,7 +125,7 @@ class OCRExtractor {
       );
       
       console.log(''); // New line after progress
-      this.log(`OCR completed with confidence: ${confidence?.toFixed(2)}%`);
+      this.log(`OCR completed with confidence: ${(confidence ?? 0).toFixed(2)}%`);
       
       if (confidence && confidence < this.config.confidenceThreshold) {
         this.log(`Warning: Low confidence score (${confidence.toFixed(2)}%)`, 'error');
@@ -249,7 +252,7 @@ Return ONLY the JSON object, no additional text.`;
       difficulty: 'Medium',
       cuisine: 'Unknown',
       dietaryTags: [],
-      ingredients: rawText.split('\n').filter(line => line.trim().length > 0).slice(0, 10),
+      ingredients: rawText.split('\n').filter(line => line.trim().length > 0).slice(0, MAX_FALLBACK_INGREDIENTS),
       instructions: ['Please review and update this recipe manually.'],
       nutrition: {
         calories: 0,

@@ -26,7 +26,7 @@ class BatchProcessor {
     console.log(`[${timestamp}] ${message}`);
   }
 
-  private getImageList(): string[] {
+  public getImageList(): string[] {
     const imagesDir = path.join(__dirname, '../public/images/recipes');
     
     if (!fs.existsSync(imagesDir)) {
@@ -123,7 +123,7 @@ async function main() {
   const limit = args.find(arg => arg.startsWith('--limit='))?.split('=')[1];
   
   // Get list of images to process
-  let images = processor['getImageList']();
+  let images = processor.getImageList();
   
   // Limit number of images if specified
   if (limit) {
