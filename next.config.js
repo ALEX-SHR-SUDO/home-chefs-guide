@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Note: 'output: export' has been removed to support API routes for image migration
+  // The migration feature requires server-side Node.js APIs (fs module) which are not
+  // available in a static export
   images: {
     unoptimized: true,
     remotePatterns: [

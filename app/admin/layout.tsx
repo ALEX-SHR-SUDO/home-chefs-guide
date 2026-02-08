@@ -22,6 +22,12 @@ export default function AdminLayout({
                 >
                   Upload Images
                 </Link>
+                <Link
+                  href="/admin/migrate"
+                  className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
+                >
+                  Migrate to Blob
+                </Link>
               </div>
             </div>
             <div className="text-sm text-gray-300">Admin Panel</div>
