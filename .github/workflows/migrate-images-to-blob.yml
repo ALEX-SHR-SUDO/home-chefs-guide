@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.confirm_migration == 'migrate'
     
+    permissions:
+      contents: write  # Required for committing changes and creating PRs
+      pull-requests: write  # Required for creating pull requests
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

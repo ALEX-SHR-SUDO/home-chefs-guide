@@ -78,8 +78,8 @@ async function migrateImagesToBlob() {
         const timestamp = Date.now();
         const ext = extname(file);
         const nameWithoutExt = basename(file, ext);
-        const sanitizedName = nameWithoutExt.replace(/[^a-z0-9-]/gi, '-').toLowerCase();
-        const blobFilename = `recipes/${timestamp}-${sanitizedName}${ext}`;
+        const sanitizedNameWithoutExt = nameWithoutExt.replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+        const blobFilename = `recipes/${timestamp}-${sanitizedNameWithoutExt}${ext}`;
 
         // Upload to Blob
         const blob = await put(blobFilename, fileBuffer, {

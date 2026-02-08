@@ -81,9 +81,12 @@ export default function UploadPage() {
     }
   };
 
+  const [copied, setCopied] = useState(false);
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(uploadedUrl);
-    alert('URL copied to clipboard!');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -244,7 +247,7 @@ export default function UploadPage() {
                     onClick={copyToClipboard}
                     className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    Copy
+                    {copied ? '✓ Copied!' : 'Copy'}
                   </button>
                 </div>
               </div>
