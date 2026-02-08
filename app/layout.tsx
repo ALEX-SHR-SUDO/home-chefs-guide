@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'HomeChef - Delicious Recipes for Every Occasion',
     template: '%s | HomeChef'
   },
-  description: 'Discover 300+ delicious recipes including breakfast, lunch, dinner, desserts, and more. Easy-to-follow instructions with prep time, cook time, and nutrition info.',
+  description: 'Discover 380+ delicious recipes including breakfast, lunch, dinner, desserts, and more. Easy-to-follow instructions with prep time, cook time, and nutrition info.',
   keywords: ['recipes', 'cooking', 'food', 'homechef', 'dinner recipes', 'desserts', 'healthy recipes', 'quick meals'],
   authors: [{ name: 'HomeChef Team' }],
   openGraph: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: 'https://homechef-recipes.com',
     siteName: 'HomeChef',
     title: 'HomeChef - Delicious Recipes for Every Occasion',
-    description: 'Discover 300+ delicious recipes for every meal and occasion.',
+    description: 'Discover 380+ delicious recipes for every meal and occasion.',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'HomeChef - Delicious Recipes',
-    description: 'Discover 300+ delicious recipes for every meal and occasion.',
+    description: 'Discover 380+ delicious recipes for every meal and occasion.',
     images: ['/images/og-image.jpg'],
   },
   robots: {

@@ -2,7 +2,7 @@
 
 A modern, SEO-optimized recipe website with 380+ unique recipes, built with Next.js, TypeScript, and Tailwind CSS. Ready for Google AdSense integration and deployment.
 
-![HomeChef](https://img.shields.io/badge/Recipes-380%2B-brightgreen) ![Next.js](https://img.shields.io/badge/Next.js-15.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-blue)
+![HomeChef](https://img.shields.io/badge/Recipes-380%2B-brightgreen) ![Next.js](https://img.shields.io/badge/Next.js-16.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-blue)
 
 ## 🌟 Features
 
