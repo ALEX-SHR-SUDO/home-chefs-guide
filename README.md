@@ -32,6 +32,7 @@ A modern, SEO-optimized recipe website with 380+ unique recipes, built with Next
 - Recipe card grid layout
 - Professional typography (Inter & Poppins fonts)
 - Warm, inviting color scheme optimized for food content
+- Images served from Vercel Blob Storage CDN for fast loading
 
 ### SEO Optimization
 - ✅ Comprehensive meta tags (title, description, keywords)
@@ -79,13 +80,40 @@ Strategic ad placements with placeholder divs:
    npm install
    ```
 
-3. **Run development server**
+3. **Set up environment variables** (for image upload functionality)
+   ```bash
+   cp .env.example .env.local
+   ```
+   Then edit `.env.local` and add your Vercel Blob Storage token:
+   ```env
+   BLOB_READ_WRITE_TOKEN=your_token_here
+   ```
+   Get your token from [Vercel Dashboard](https://vercel.com/dashboard/stores)
+
+4. **Run development server**
    ```bash
    npm run dev
    ```
 
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🖼️ Image Management
+
+This project uses **Vercel Blob Storage** for recipe images, providing:
+- Fast CDN delivery worldwide
+- Automatic optimization with Next.js Image
+- Easy upload through admin panel
+- Reduced repository size
+
+### Uploading New Images
+
+1. Navigate to `/admin/upload`
+2. Drag and drop your image
+3. Copy the generated URL
+4. Use the URL in your recipe data
+
+For detailed documentation, see [docs/IMAGE_MIGRATION.md](docs/IMAGE_MIGRATION.md)
 
 ### Build for Production
 
