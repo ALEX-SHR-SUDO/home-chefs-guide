@@ -1,4 +1,4 @@
-import { put, head } from '@vercel/blob';
+import { put, list } from '@vercel/blob';
 
 const OVERRIDES_BLOB_NAME = 'recipe-overrides.json';
 
@@ -13,39 +13,45 @@ export interface RecipeOverrides {
 }
 
 /**
- * Get the URL for the recipe overrides blob
- */
-async function getOverridesBlobUrl(): Promise<string | null> {
-  try {
-    // Check if the blob exists
-    const blobInfo = await head(OVERRIDES_BLOB_NAME);
-    return blobInfo?.url || null;
-  } catch (error) {
-    // Blob doesn't exist yet
-    return null;
-  }
-}
-
-/**
  * Load recipe image overrides from Vercel Blob storage
  */
 export async function loadRecipeOverrides(): Promise<RecipeOverrides> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  
+  if (!token) {
+    // No token configured, return empty overrides
+    return {};
+  }
+
   try {
-    const blobUrl = await getOverridesBlobUrl();
+    // List blobs to find our overrides file
+    const { blobs } = await list({
+      token,
+      prefix: OVERRIDES_BLOB_NAME,
+      limit: 1,
+    });
     
-    if (!blobUrl) {
-      // No overrides yet, return empty object
+    // If no blob found, return empty object
+    if (blobs.length === 0) {
       return {};
     }
 
-    const response = await fetch(blobUrl);
+    // Fetch the overrides file
+    const response = await fetch(blobs[0].url);
     if (!response.ok) {
       console.warn('Failed to fetch recipe overrides');
       return {};
     }
 
     const overrides = await response.json();
-    return overrides || {};
+    
+    // Validate that overrides is an object
+    if (typeof overrides !== 'object' || overrides === null || Array.isArray(overrides)) {
+      console.warn('Invalid overrides format, expected object');
+      return {};
+    }
+    
+    return overrides;
   } catch (error) {
     console.error('Error loading recipe overrides:', error);
     return {};
