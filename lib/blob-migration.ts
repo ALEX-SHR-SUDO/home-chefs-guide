@@ -28,9 +28,9 @@ const RECIPES_DIR = join(process.cwd(), 'public', 'images', 'recipes');
 const RECIPES_DATA_PATH = join(process.cwd(), 'lib', 'recipesData.ts');
 
 /**
- * Get backup directory - use /tmp for serverless/read-only environments
+ * Cached backup directory - determined once at module load
  */
-function getBackupDir(): string {
+const BACKUP_DIR = (() => {
   // In serverless environments, the filesystem is read-only except for /tmp
   // Detect serverless environments by checking for:
   // 1. AWS Lambda: /var/task working directory
@@ -41,12 +41,8 @@ function getBackupDir(): string {
     process.env.VERCEL === '1' ||
     !!process.env.AWS_LAMBDA_FUNCTION_NAME;
   
-  if (isServerless) {
-    return '/tmp';
-  }
-  
-  return join(process.cwd(), 'lib');
-}
+  return isServerless ? '/tmp' : join(process.cwd(), 'lib');
+})();
 
 /**
  * Get content type based on file extension
@@ -68,8 +64,7 @@ function getContentType(ext: string): string {
  */
 export async function createBackup(): Promise<BackupResult> {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const backupDir = getBackupDir();
-  const backupPath = join(backupDir, `recipesData.backup.${timestamp}.ts`);
+  const backupPath = join(BACKUP_DIR, `recipesData.backup.${timestamp}.ts`);
   
   try {
     await copyFile(RECIPES_DATA_PATH, backupPath);

@@ -16,9 +16,9 @@ const RECIPES_DIR = join(process.cwd(), 'public', 'images', 'recipes');
 const MIGRATION_MAP_PATH = join(process.cwd(), 'scripts', 'blob-migration-map.json');
 
 /**
- * Get backup directory - use /tmp for serverless/read-only environments
+ * Cached backup directory - determined once at module load
  */
-function getBackupDir(): string {
+const BACKUP_DIR = (() => {
   // In serverless environments, the filesystem is read-only except for /tmp
   // Detect serverless environments by checking for:
   // 1. AWS Lambda: /var/task working directory
@@ -29,14 +29,10 @@ function getBackupDir(): string {
     process.env.VERCEL === '1' ||
     !!process.env.AWS_LAMBDA_FUNCTION_NAME;
   
-  if (isServerless) {
-    return '/tmp';
-  }
-  
-  return join(process.cwd(), 'lib');
-}
+  return isServerless ? '/tmp' : join(process.cwd(), 'lib');
+})();
 
-const BACKUP_PATH = join(getBackupDir(), 'recipesData.backup.ts');
+const BACKUP_PATH = join(BACKUP_DIR, 'recipesData.backup.ts');
 
 async function migrateImagesToBlob() {
   console.log('🚀 Starting image migration to Vercel Blob...\n');
@@ -51,12 +47,14 @@ async function migrateImagesToBlob() {
   try {
     // Create backup of recipesData.ts
     console.log('📦 Creating backup of recipesData.ts...');
+    let backupCreated = false;
     try {
       await copyFile(
         join(process.cwd(), 'lib', 'recipesData.ts'),
         BACKUP_PATH
       );
       console.log(`✅ Backup created at ${BACKUP_PATH}\n`);
+      backupCreated = true;
     } catch (error: any) {
       console.warn('⚠️  Warning: Could not create backup:', error.message);
       console.warn('   Continuing migration without backup...\n');
@@ -152,6 +150,7 @@ async function migrateImagesToBlob() {
     console.log(`✅ Successful: ${results.success}`);
     console.log(`❌ Failed: ${results.failed}`);
     console.log(`📁 Total: ${imageFiles.length}`);
+    console.log(`💾 Backup: ${backupCreated ? 'Created' : 'Skipped'}`);
 
     if (results.errors.length > 0) {
       console.log('\n❌ Errors:');
