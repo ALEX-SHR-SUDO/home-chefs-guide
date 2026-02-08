@@ -14,7 +14,24 @@ interface MigrationMapEntry {
 
 const RECIPES_DIR = join(process.cwd(), 'public', 'images', 'recipes');
 const MIGRATION_MAP_PATH = join(process.cwd(), 'scripts', 'blob-migration-map.json');
-const BACKUP_DIR = join(process.cwd(), 'lib');
+
+/**
+ * Cached backup directory - determined once at module load
+ */
+const BACKUP_DIR = (() => {
+  // In serverless environments, the filesystem is read-only except for /tmp
+  // Detect serverless environments by checking for:
+  // 1. AWS Lambda: /var/task working directory
+  // 2. Vercel: VERCEL environment variable
+  // 3. Generic Lambda: AWS_LAMBDA_FUNCTION_NAME environment variable
+  const isServerless = 
+    process.cwd().startsWith('/var/task') ||
+    process.env.VERCEL === '1' ||
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME;
+  
+  return isServerless ? '/tmp' : join(process.cwd(), 'lib');
+})();
+
 const BACKUP_PATH = join(BACKUP_DIR, 'recipesData.backup.ts');
 
 async function migrateImagesToBlob() {
@@ -30,14 +47,17 @@ async function migrateImagesToBlob() {
   try {
     // Create backup of recipesData.ts
     console.log('📦 Creating backup of recipesData.ts...');
+    let backupCreated = false;
     try {
       await copyFile(
-        join(BACKUP_DIR, 'recipesData.ts'),
+        join(process.cwd(), 'lib', 'recipesData.ts'),
         BACKUP_PATH
       );
       console.log(`✅ Backup created at ${BACKUP_PATH}\n`);
-    } catch (error) {
-      console.error('⚠️  Warning: Could not create backup:', error);
+      backupCreated = true;
+    } catch (error: any) {
+      console.warn('⚠️  Warning: Could not create backup:', error.message);
+      console.warn('   Continuing migration without backup...\n');
     }
 
     // Read all images from recipes directory
@@ -130,6 +150,7 @@ async function migrateImagesToBlob() {
     console.log(`✅ Successful: ${results.success}`);
     console.log(`❌ Failed: ${results.failed}`);
     console.log(`📁 Total: ${imageFiles.length}`);
+    console.log(`💾 Backup: ${backupCreated ? 'Created' : 'Skipped'}`);
 
     if (results.errors.length > 0) {
       console.log('\n❌ Errors:');

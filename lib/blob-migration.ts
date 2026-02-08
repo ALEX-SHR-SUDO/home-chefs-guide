@@ -2,6 +2,12 @@ import { put } from '@vercel/blob';
 import { readdir, readFile, writeFile, copyFile } from 'fs/promises';
 import { join, extname, basename } from 'path';
 
+export interface BackupResult {
+  success: boolean;
+  path?: string;
+  message: string;
+}
+
 export interface MigrationMapEntry {
   oldPath: string;
   localFile: string;
@@ -19,8 +25,24 @@ export interface MigrationResult {
 }
 
 const RECIPES_DIR = join(process.cwd(), 'public', 'images', 'recipes');
-const BACKUP_DIR = join(process.cwd(), 'lib');
-const RECIPES_DATA_PATH = join(BACKUP_DIR, 'recipesData.ts');
+const RECIPES_DATA_PATH = join(process.cwd(), 'lib', 'recipesData.ts');
+
+/**
+ * Cached backup directory - determined once at module load
+ */
+const BACKUP_DIR = (() => {
+  // In serverless environments, the filesystem is read-only except for /tmp
+  // Detect serverless environments by checking for:
+  // 1. AWS Lambda: /var/task working directory
+  // 2. Vercel: VERCEL environment variable
+  // 3. Generic Lambda: AWS_LAMBDA_FUNCTION_NAME environment variable
+  const isServerless = 
+    process.cwd().startsWith('/var/task') ||
+    process.env.VERCEL === '1' ||
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME;
+  
+  return isServerless ? '/tmp' : join(process.cwd(), 'lib');
+})();
 
 /**
  * Get content type based on file extension
@@ -38,14 +60,29 @@ function getContentType(ext: string): string {
 
 /**
  * Create a backup of recipesData.ts before making changes
+ * @returns BackupResult indicating success/failure and path/message
  */
-export async function createBackup(): Promise<string> {
+export async function createBackup(): Promise<BackupResult> {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
   const backupPath = join(BACKUP_DIR, `recipesData.backup.${timestamp}.ts`);
   
-  await copyFile(RECIPES_DATA_PATH, backupPath);
-  
-  return backupPath;
+  try {
+    await copyFile(RECIPES_DATA_PATH, backupPath);
+    return {
+      success: true,
+      path: backupPath,
+      message: `Backup created at: ${backupPath}`,
+    };
+  } catch (error: any) {
+    // In serverless/read-only environments, backup may fail
+    // Log the error but don't fail the migration
+    console.warn('Warning: Could not create backup file:', error.message);
+    
+    return {
+      success: false,
+      message: `Backup skipped (read-only filesystem): ${error.message}`,
+    };
+  }
 }
 
 /**
