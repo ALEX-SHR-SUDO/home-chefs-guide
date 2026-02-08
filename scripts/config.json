@@ -1,0 +1,19 @@
+{
+  "ocrLanguage": "eng",
+  "maxRecipes": 10,
+  "imageDirectory": "public/images/recipes",
+  "outputDirectory": "scripts/ocr-output",
+  "defaultAuthor": "Home Chef",
+  "defaultDifficulty": "Medium",
+  "targetRecipes": [
+    "naan.jpg",
+    "tiramisu.jpg",
+    "banoffee-pie.jpg",
+    "moroccan-tagine.jpg",
+    "edamame.jpg",
+    "monkey-bread.jpg",
+    "minestrone-soup.jpg",
+    "brioche.jpg",
+    "chia-pudding.jpg"
+  ]
+}
