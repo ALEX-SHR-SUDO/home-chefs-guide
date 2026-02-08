@@ -116,7 +116,7 @@ class OCRExtractor {
         imagePath,
         this.config.language,
         {
-          logger: (m) => {
+          logger: (m: any) => {
             if (m.status === 'recognizing text') {
               process.stdout.write(`\rProgress: ${Math.round(m.progress * 100)}%`);
             }
