@@ -18718,4 +18718,396 @@ export const allRecipes: Recipe[] = [
     "datePublished": "2024-01-15",
     "author": "HomeChef Team"
   }
+,
+  {
+    "id": "banoffee-pie",
+    "title": "Banoffee Pie",
+    "slug": "banoffee-pie",
+    "category": "Desserts & Sweets",
+    "categorySlug": "desserts",
+    "description": "Decadent British dessert combining bananas, toffee, and cream in a buttery biscuit crust. This indulgent pie is sure to satisfy any sweet tooth.",
+    "image": "/images/recipes/banoffee-pie.jpg",
+    "prepTime": 25,
+    "cookTime": 0,
+    "totalTime": 25,
+    "servings": 8,
+    "difficulty": "Easy",
+    "cuisine": "International",
+    "dietaryTags": [
+      "Vegetarian"
+    ],
+    "ingredients": [
+      "14 oz digestive biscuits or graham crackers",
+      "1/2 cup melted butter",
+      "1 can (14 oz) sweetened condensed milk",
+      "3-4 ripe bananas, sliced",
+      "2 cups heavy whipping cream",
+      "2 tbsp powdered sugar",
+      "1 tsp vanilla extract",
+      "Dark chocolate shavings for garnish"
+    ],
+    "instructions": [
+      "Crush biscuits into fine crumbs and mix with melted butter.",
+      "Press mixture into bottom and sides of a 9-inch pie dish.",
+      "Refrigerate crust for 30 minutes.",
+      "Make toffee: Place unopened condensed milk can in pot of boiling water for 2-3 hours (or use store-bought dulce de leche).",
+      "Let toffee cool completely, then spread over biscuit base.",
+      "Arrange banana slices over toffee layer.",
+      "Whip cream with powdered sugar and vanilla until stiff peaks form.",
+      "Spread or pipe whipped cream over bananas.",
+      "Garnish with chocolate shavings.",
+      "Refrigerate for at least 2 hours before serving."
+    ],
+    "nutrition": {
+      "calories": 520,
+      "protein": 7,
+      "carbs": 58,
+      "fat": 30
+    },
+    "tips": [
+      "Slice bananas just before assembling to prevent browning.",
+      "For extra flavor, drizzle caramel sauce on top before serving."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "brioche",
+    "title": "Brioche",
+    "slug": "brioche",
+    "category": "Baking & Breads",
+    "categorySlug": "baking-breads",
+    "description": "Delicious brioche recipe that combines traditional techniques with modern flavors.",
+    "image": "/images/recipes/brioche.jpg",
+    "prepTime": 20,
+    "cookTime": 30,
+    "totalTime": 50,
+    "servings": 4,
+    "difficulty": "Medium",
+    "cuisine": "International",
+    "dietaryTags": [],
+    "ingredients": [
+      "Main ingredient",
+      "Supporting ingredients",
+      "Seasonings and spices",
+      "Garnishes"
+    ],
+    "instructions": [
+      "Prepare all ingredients and equipment.",
+      "Follow traditional cooking methods.",
+      "Season to taste and serve."
+    ],
+    "nutrition": {
+      "calories": 300,
+      "protein": 15,
+      "carbs": 40,
+      "fat": 10
+    },
+    "tips": [
+      "Use fresh, quality ingredients for best results.",
+      "Adjust seasonings to your taste preference."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "chia-pudding",
+    "title": "Chia Pudding",
+    "slug": "chia-pudding",
+    "category": "Breakfast & Brunch",
+    "categorySlug": "breakfast-brunch",
+    "description": "Delicious chia pudding recipe that combines traditional techniques with modern flavors.",
+    "image": "/images/recipes/chia-pudding.jpg",
+    "prepTime": 20,
+    "cookTime": 30,
+    "totalTime": 50,
+    "servings": 4,
+    "difficulty": "Medium",
+    "cuisine": "American",
+    "dietaryTags": [],
+    "ingredients": [
+      "Main ingredient",
+      "Supporting ingredients",
+      "Seasonings and spices",
+      "Garnishes"
+    ],
+    "instructions": [
+      "Prepare all ingredients and equipment.",
+      "Follow traditional cooking methods.",
+      "Season to taste and serve."
+    ],
+    "nutrition": {
+      "calories": 300,
+      "protein": 15,
+      "carbs": 40,
+      "fat": 10
+    },
+    "tips": [
+      "Use fresh, quality ingredients for best results.",
+      "Adjust seasonings to your taste preference."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "edamame",
+    "title": "Edamame",
+    "slug": "edamame",
+    "category": "Appetizers & Snacks",
+    "categorySlug": "appetizers-snacks",
+    "description": "Delicious edamame recipe that combines traditional techniques with modern flavors.",
+    "image": "/images/recipes/edamame.jpg",
+    "prepTime": 20,
+    "cookTime": 30,
+    "totalTime": 50,
+    "servings": 4,
+    "difficulty": "Medium",
+    "cuisine": "Japanese",
+    "dietaryTags": [],
+    "ingredients": [
+      "Main ingredient",
+      "Supporting ingredients",
+      "Seasonings and spices",
+      "Garnishes"
+    ],
+    "instructions": [
+      "Prepare all ingredients and equipment.",
+      "Follow traditional cooking methods.",
+      "Season to taste and serve."
+    ],
+    "nutrition": {
+      "calories": 300,
+      "protein": 15,
+      "carbs": 40,
+      "fat": 10
+    },
+    "tips": [
+      "Use fresh, quality ingredients for best results.",
+      "Adjust seasonings to your taste preference."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "minestrone-soup",
+    "title": "Minestrone Soup",
+    "slug": "minestrone-soup",
+    "category": "Lunch Ideas",
+    "categorySlug": "lunch",
+    "description": "Delicious minestrone soup recipe that combines traditional techniques with modern flavors.",
+    "image": "/images/recipes/minestrone-soup.jpg",
+    "prepTime": 20,
+    "cookTime": 30,
+    "totalTime": 50,
+    "servings": 4,
+    "difficulty": "Medium",
+    "cuisine": "International",
+    "dietaryTags": [],
+    "ingredients": [
+      "Main ingredient",
+      "Supporting ingredients",
+      "Seasonings and spices",
+      "Garnishes"
+    ],
+    "instructions": [
+      "Prepare all ingredients and equipment.",
+      "Follow traditional cooking methods.",
+      "Season to taste and serve."
+    ],
+    "nutrition": {
+      "calories": 300,
+      "protein": 15,
+      "carbs": 40,
+      "fat": 10
+    },
+    "tips": [
+      "Use fresh, quality ingredients for best results.",
+      "Adjust seasonings to your taste preference."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "monkey-bread",
+    "title": "Monkey Bread",
+    "slug": "monkey-bread",
+    "category": "Baking & Breads",
+    "categorySlug": "baking-breads",
+    "description": "Delicious monkey bread recipe that combines traditional techniques with modern flavors.",
+    "image": "/images/recipes/monkey-bread.jpg",
+    "prepTime": 20,
+    "cookTime": 30,
+    "totalTime": 50,
+    "servings": 4,
+    "difficulty": "Medium",
+    "cuisine": "International",
+    "dietaryTags": [],
+    "ingredients": [
+      "Main ingredient",
+      "Supporting ingredients",
+      "Seasonings and spices",
+      "Garnishes"
+    ],
+    "instructions": [
+      "Prepare all ingredients and equipment.",
+      "Follow traditional cooking methods.",
+      "Season to taste and serve."
+    ],
+    "nutrition": {
+      "calories": 300,
+      "protein": 15,
+      "carbs": 40,
+      "fat": 10
+    },
+    "tips": [
+      "Use fresh, quality ingredients for best results.",
+      "Adjust seasonings to your taste preference."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "moroccan-tagine",
+    "title": "Moroccan Tagine",
+    "slug": "moroccan-tagine",
+    "category": "International Cuisine",
+    "categorySlug": "international",
+    "description": "Delicious moroccan tagine recipe that combines traditional techniques with modern flavors.",
+    "image": "/images/recipes/moroccan-tagine.jpg",
+    "prepTime": 20,
+    "cookTime": 30,
+    "totalTime": 50,
+    "servings": 4,
+    "difficulty": "Medium",
+    "cuisine": "Moroccan",
+    "dietaryTags": [],
+    "ingredients": [
+      "Main ingredient",
+      "Supporting ingredients",
+      "Seasonings and spices",
+      "Garnishes"
+    ],
+    "instructions": [
+      "Prepare all ingredients and equipment.",
+      "Follow traditional cooking methods.",
+      "Season to taste and serve."
+    ],
+    "nutrition": {
+      "calories": 300,
+      "protein": 15,
+      "carbs": 40,
+      "fat": 10
+    },
+    "tips": [
+      "Use fresh, quality ingredients for best results.",
+      "Adjust seasonings to your taste preference."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "naan",
+    "title": "Naan",
+    "slug": "naan",
+    "category": "Baking & Breads",
+    "categorySlug": "baking-breads",
+    "description": "Soft and fluffy Indian flatbread, perfect for scooping up curries and dals. This traditional naan is baked to perfection with a golden, slightly charred exterior.",
+    "image": "/images/recipes/naan.jpg",
+    "prepTime": 90,
+    "cookTime": 15,
+    "totalTime": 105,
+    "servings": 8,
+    "difficulty": "Medium",
+    "cuisine": "International",
+    "dietaryTags": [
+      "Vegetarian"
+    ],
+    "ingredients": [
+      "3 cups all-purpose flour",
+      "1 tsp salt",
+      "1 tsp sugar",
+      "1 packet active dry yeast",
+      "1 cup warm water",
+      "1/4 cup plain yogurt",
+      "2 tbsp melted butter",
+      "2 cloves garlic, minced (optional)",
+      "Fresh cilantro for garnish"
+    ],
+    "instructions": [
+      "In a large bowl, combine warm water, sugar, and yeast. Let stand for 5 minutes until foamy.",
+      "Add flour, salt, yogurt, and butter. Mix until dough forms.",
+      "Knead the dough on a floured surface for 8-10 minutes until smooth and elastic.",
+      "Place in a greased bowl, cover, and let rise for 1 hour until doubled in size.",
+      "Preheat oven to 500°F with a pizza stone or baking sheet inside.",
+      "Divide dough into 8 pieces. Roll each into an oval shape about 1/4 inch thick.",
+      "Brush with melted butter and sprinkle with garlic if using.",
+      "Bake on hot stone for 2-3 minutes until puffed and golden with charred spots.",
+      "Brush with more butter and garnish with cilantro. Serve warm."
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": 6,
+      "carbs": 38,
+      "fat": 4
+    },
+    "tips": [
+      "For extra flavor, add nigella seeds or sesame seeds to the dough.",
+      "If you don't have a pizza stone, use an inverted baking sheet."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  },
+  {
+    "id": "tiramisu",
+    "title": "Tiramisu",
+    "slug": "tiramisu",
+    "category": "Desserts & Sweets",
+    "categorySlug": "desserts",
+    "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and rich mascarpone cream. This no-bake dessert is the perfect ending to any meal.",
+    "image": "/images/recipes/tiramisu.jpg",
+    "prepTime": 30,
+    "cookTime": 0,
+    "totalTime": 30,
+    "servings": 8,
+    "difficulty": "Easy",
+    "cuisine": "International",
+    "dietaryTags": [
+      "Vegetarian"
+    ],
+    "ingredients": [
+      "6 large egg yolks",
+      "3/4 cup sugar",
+      "1 1/3 cups mascarpone cheese",
+      "2 cups heavy cream",
+      "2 cups strong espresso, cooled",
+      "3 tbsp coffee liqueur (optional)",
+      "24-30 ladyfinger cookies",
+      "Unsweetened cocoa powder for dusting"
+    ],
+    "instructions": [
+      "Whisk egg yolks and sugar in a heatproof bowl over simmering water until thick and pale.",
+      "Remove from heat and whisk in mascarpone until smooth. Set aside to cool.",
+      "In a separate bowl, whip heavy cream to stiff peaks.",
+      "Gently fold whipped cream into mascarpone mixture.",
+      "Combine espresso and coffee liqueur in a shallow dish.",
+      "Quickly dip each ladyfinger into coffee mixture (don't soak).",
+      "Arrange half the ladyfingers in a 9x13 inch dish.",
+      "Spread half the mascarpone mixture over ladyfingers.",
+      "Repeat with another layer of dipped ladyfingers and remaining cream.",
+      "Cover and refrigerate for at least 4 hours or overnight.",
+      "Dust generously with cocoa powder before serving."
+    ],
+    "nutrition": {
+      "calories": 380,
+      "protein": 8,
+      "carbs": 42,
+      "fat": 20
+    },
+    "tips": [
+      "Use room temperature mascarpone for easier mixing.",
+      "The longer it chills, the better the flavors meld together."
+    ],
+    "datePublished": "2026-02-08",
+    "author": "Home Chef"
+  }
 ];

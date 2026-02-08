@@ -11,7 +11,8 @@
     "ocr:extract": "ts-node scripts/index.ts extract",
     "ocr:parse": "ts-node scripts/index.ts parse",
     "ocr:add": "ts-node scripts/index.ts add",
-    "ocr:full": "ts-node scripts/index.ts full"
+    "ocr:full": "ts-node scripts/index.ts full",
+    "ocr:demo": "ts-node scripts/generate-demo.ts"
   },
   "repository": {
     "type": "git",
