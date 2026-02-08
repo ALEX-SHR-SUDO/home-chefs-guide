@@ -18718,6 +18718,7 @@ export const allRecipes: Recipe[] = [
     "datePublished": "2024-01-15",
     "author": "HomeChef Team"
   }
+
 ,
   {
     "id": "banoffee-pie",
@@ -18777,35 +18778,50 @@ export const allRecipes: Recipe[] = [
     "slug": "brioche",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
-    "description": "Delicious brioche recipe that combines traditional techniques with modern flavors.",
+    "description": "Rich, buttery French bread with a tender, fluffy crumb and golden crust. Perfect for breakfast, sandwiches, or French toast.",
     "image": "/images/recipes/brioche.jpg",
-    "prepTime": 20,
+    "prepTime": 30,
     "cookTime": 30,
-    "totalTime": 50,
-    "servings": 4,
-    "difficulty": "Medium",
+    "totalTime": 60,
+    "servings": 12,
+    "difficulty": "Hard",
     "cuisine": "International",
-    "dietaryTags": [],
+    "dietaryTags": [
+      "Vegetarian"
+    ],
     "ingredients": [
-      "Main ingredient",
-      "Supporting ingredients",
-      "Seasonings and spices",
-      "Garnishes"
+      "4 cups all-purpose flour",
+      "1/3 cup sugar",
+      "2 tsp salt",
+      "2 packets active dry yeast",
+      "1/2 cup warm milk",
+      "6 large eggs",
+      "1 1/2 cups butter, softened",
+      "1 egg beaten with 1 tbsp water for egg wash"
     ],
     "instructions": [
-      "Prepare all ingredients and equipment.",
-      "Follow traditional cooking methods.",
-      "Season to taste and serve."
+      "In mixer bowl, combine flour, sugar, salt, and yeast.",
+      "Add warm milk and eggs. Mix with dough hook until combined.",
+      "Knead on medium speed for 10 minutes until dough is smooth.",
+      "Gradually add butter, one tablespoon at a time, mixing well.",
+      "Continue kneading for 10 more minutes until butter is fully incorporated.",
+      "Transfer to greased bowl, cover, and refrigerate overnight.",
+      "Next day, punch down dough and shape into desired forms.",
+      "Place in greased pans and let rise for 2-3 hours until doubled.",
+      "Preheat oven to 375°F.",
+      "Brush with egg wash.",
+      "Bake for 25-30 minutes until deep golden brown.",
+      "Cool on wire rack before slicing."
     ],
     "nutrition": {
-      "calories": 300,
-      "protein": 15,
-      "carbs": 40,
-      "fat": 10
+      "calories": 320,
+      "protein": 8,
+      "carbs": 35,
+      "fat": 16
     },
     "tips": [
-      "Use fresh, quality ingredients for best results.",
-      "Adjust seasonings to your taste preference."
+      "The dough should be very soft and slightly sticky - that's normal.",
+      "Refrigerating overnight makes the dough easier to work with."
     ],
     "datePublished": "2026-02-08",
     "author": "Home Chef"
@@ -18816,35 +18832,49 @@ export const allRecipes: Recipe[] = [
     "slug": "chia-pudding",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
-    "description": "Delicious chia pudding recipe that combines traditional techniques with modern flavors.",
+    "description": "Healthy, no-cook breakfast or snack made with chia seeds and your choice of milk. Customizable with various toppings and flavors.",
     "image": "/images/recipes/chia-pudding.jpg",
-    "prepTime": 20,
-    "cookTime": 30,
-    "totalTime": 50,
+    "prepTime": 5,
+    "cookTime": 0,
+    "totalTime": 5,
     "servings": 4,
-    "difficulty": "Medium",
+    "difficulty": "Easy",
     "cuisine": "American",
-    "dietaryTags": [],
+    "dietaryTags": [
+      "Vegetarian",
+      "Vegan",
+      "Gluten-Free"
+    ],
     "ingredients": [
-      "Main ingredient",
-      "Supporting ingredients",
-      "Seasonings and spices",
-      "Garnishes"
+      "1/4 cup chia seeds",
+      "1 cup almond milk (or milk of choice)",
+      "1 tbsp maple syrup or honey",
+      "1/2 tsp vanilla extract",
+      "Fresh berries for topping",
+      "Sliced almonds for topping",
+      "Coconut flakes for topping",
+      "Optional: cocoa powder or matcha powder"
     ],
     "instructions": [
-      "Prepare all ingredients and equipment.",
-      "Follow traditional cooking methods.",
-      "Season to taste and serve."
+      "In a bowl or jar, combine chia seeds and milk.",
+      "Add maple syrup and vanilla extract.",
+      "Whisk well to prevent clumping.",
+      "Let sit for 5 minutes, then whisk again.",
+      "Cover and refrigerate for at least 2 hours or overnight.",
+      "Stir before serving to break up any clumps.",
+      "Divide into serving bowls.",
+      "Top with fresh berries, nuts, and other desired toppings.",
+      "Serve chilled."
     ],
     "nutrition": {
-      "calories": 300,
-      "protein": 15,
-      "carbs": 40,
-      "fat": 10
+      "calories": 150,
+      "protein": 5,
+      "carbs": 18,
+      "fat": 7
     },
     "tips": [
-      "Use fresh, quality ingredients for best results.",
-      "Adjust seasonings to your taste preference."
+      "Make several servings ahead for grab-and-go breakfasts.",
+      "Adjust sweetness and thickness to your preference by varying liquid ratio."
     ],
     "datePublished": "2026-02-08",
     "author": "Home Chef"
@@ -18855,35 +18885,45 @@ export const allRecipes: Recipe[] = [
     "slug": "edamame",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
-    "description": "Delicious edamame recipe that combines traditional techniques with modern flavors.",
+    "description": "Simply prepared Japanese soybeans, lightly salted and perfect as a healthy snack or appetizer. Quick to make and incredibly nutritious.",
     "image": "/images/recipes/edamame.jpg",
-    "prepTime": 20,
-    "cookTime": 30,
-    "totalTime": 50,
+    "prepTime": 5,
+    "cookTime": 8,
+    "totalTime": 13,
     "servings": 4,
-    "difficulty": "Medium",
+    "difficulty": "Easy",
     "cuisine": "Japanese",
-    "dietaryTags": [],
+    "dietaryTags": [
+      "Vegetarian",
+      "Vegan",
+      "Gluten-Free"
+    ],
     "ingredients": [
-      "Main ingredient",
-      "Supporting ingredients",
-      "Seasonings and spices",
-      "Garnishes"
+      "1 lb frozen edamame in pods",
+      "2 tbsp sea salt",
+      "1 tsp sesame oil (optional)",
+      "1 tsp chili flakes (optional)",
+      "Lemon wedges for serving"
     ],
     "instructions": [
-      "Prepare all ingredients and equipment.",
-      "Follow traditional cooking methods.",
-      "Season to taste and serve."
+      "Bring a large pot of water to a boil.",
+      "Add 1 tablespoon of salt to the water.",
+      "Add frozen edamame and cook for 5-8 minutes.",
+      "Drain well in a colander.",
+      "Transfer to a serving bowl while still hot.",
+      "Toss with remaining salt and sesame oil if using.",
+      "Sprinkle with chili flakes if desired.",
+      "Serve immediately with lemon wedges."
     ],
     "nutrition": {
-      "calories": 300,
-      "protein": 15,
-      "carbs": 40,
-      "fat": 10
+      "calories": 120,
+      "protein": 11,
+      "carbs": 10,
+      "fat": 5
     },
     "tips": [
-      "Use fresh, quality ingredients for best results.",
-      "Adjust seasonings to your taste preference."
+      "Squeeze lemon juice over the pods for extra flavor.",
+      "To eat, squeeze the beans out of the pods with your teeth."
     ],
     "datePublished": "2026-02-08",
     "author": "Home Chef"
@@ -18894,35 +18934,58 @@ export const allRecipes: Recipe[] = [
     "slug": "minestrone-soup",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
-    "description": "Delicious minestrone soup recipe that combines traditional techniques with modern flavors.",
+    "description": "Classic Italian vegetable soup loaded with beans, pasta, and fresh vegetables in a savory tomato broth. Hearty, healthy, and satisfying.",
     "image": "/images/recipes/minestrone-soup.jpg",
-    "prepTime": 20,
-    "cookTime": 30,
-    "totalTime": 50,
-    "servings": 4,
-    "difficulty": "Medium",
+    "prepTime": 15,
+    "cookTime": 40,
+    "totalTime": 55,
+    "servings": 8,
+    "difficulty": "Easy",
     "cuisine": "International",
-    "dietaryTags": [],
+    "dietaryTags": [
+      "Vegetarian",
+      "Vegan"
+    ],
     "ingredients": [
-      "Main ingredient",
-      "Supporting ingredients",
-      "Seasonings and spices",
-      "Garnishes"
+      "2 tbsp olive oil",
+      "1 onion, diced",
+      "2 carrots, diced",
+      "2 celery stalks, diced",
+      "3 cloves garlic, minced",
+      "1 zucchini, diced",
+      "1 can diced tomatoes",
+      "1 can kidney beans, drained",
+      "1 can cannellini beans, drained",
+      "6 cups vegetable broth",
+      "1 cup small pasta (ditalini or elbow)",
+      "2 cups fresh spinach",
+      "1 tsp dried oregano",
+      "1 tsp dried basil",
+      "Salt and pepper to taste",
+      "Parmesan cheese for serving",
+      "Fresh basil for garnish"
     ],
     "instructions": [
-      "Prepare all ingredients and equipment.",
-      "Follow traditional cooking methods.",
-      "Season to taste and serve."
+      "Heat olive oil in a large pot over medium heat.",
+      "Sauté onion, carrots, and celery until softened, about 8 minutes.",
+      "Add garlic and cook for 1 minute.",
+      "Add zucchini, tomatoes, beans, and broth.",
+      "Stir in oregano and basil.",
+      "Bring to a boil, then reduce heat and simmer for 20 minutes.",
+      "Add pasta and cook according to package directions.",
+      "Stir in spinach and cook until wilted, about 2 minutes.",
+      "Season with salt and pepper.",
+      "Serve hot with grated Parmesan and fresh basil."
     ],
     "nutrition": {
-      "calories": 300,
-      "protein": 15,
-      "carbs": 40,
-      "fat": 10
+      "calories": 220,
+      "protein": 10,
+      "carbs": 38,
+      "fat": 4
     },
     "tips": [
-      "Use fresh, quality ingredients for best results.",
-      "Adjust seasonings to your taste preference."
+      "Add pasta just before serving to prevent it from getting mushy.",
+      "This soup freezes well - just add pasta when reheating."
     ],
     "datePublished": "2026-02-08",
     "author": "Home Chef"
@@ -18933,35 +18996,49 @@ export const allRecipes: Recipe[] = [
     "slug": "monkey-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
-    "description": "Delicious monkey bread recipe that combines traditional techniques with modern flavors.",
+    "description": "Pull-apart bread made with bite-sized pieces of dough coated in cinnamon sugar and baked in a bundt pan. A sweet, gooey treat perfect for sharing.",
     "image": "/images/recipes/monkey-bread.jpg",
     "prepTime": 20,
-    "cookTime": 30,
-    "totalTime": 50,
-    "servings": 4,
-    "difficulty": "Medium",
+    "cookTime": 35,
+    "totalTime": 55,
+    "servings": 10,
+    "difficulty": "Easy",
     "cuisine": "International",
-    "dietaryTags": [],
+    "dietaryTags": [
+      "Vegetarian"
+    ],
     "ingredients": [
-      "Main ingredient",
-      "Supporting ingredients",
-      "Seasonings and spices",
-      "Garnishes"
+      "2 cans refrigerated biscuit dough",
+      "1 cup granulated sugar",
+      "2 tsp ground cinnamon",
+      "1/2 cup butter, melted",
+      "1 cup brown sugar",
+      "1/2 tsp vanilla extract",
+      "Optional: 1/2 cup chopped pecans"
     ],
     "instructions": [
-      "Prepare all ingredients and equipment.",
-      "Follow traditional cooking methods.",
-      "Season to taste and serve."
+      "Preheat oven to 350°F. Grease a bundt pan.",
+      "Cut each biscuit into quarters.",
+      "Mix granulated sugar and cinnamon in a bowl.",
+      "Roll each dough piece in cinnamon sugar.",
+      "Layer coated dough pieces in prepared bundt pan.",
+      "In a small saucepan, melt butter with brown sugar.",
+      "Stir in vanilla and bring to a simmer.",
+      "Pour butter mixture evenly over dough pieces.",
+      "Sprinkle with pecans if using.",
+      "Bake for 30-35 minutes until golden brown.",
+      "Let cool for 5 minutes, then invert onto serving plate.",
+      "Serve warm, pulling apart pieces to eat."
     ],
     "nutrition": {
-      "calories": 300,
-      "protein": 15,
-      "carbs": 40,
-      "fat": 10
+      "calories": 310,
+      "protein": 4,
+      "carbs": 52,
+      "fat": 11
     },
     "tips": [
-      "Use fresh, quality ingredients for best results.",
-      "Adjust seasonings to your taste preference."
+      "Serve immediately while warm and gooey.",
+      "Drizzle with cream cheese glaze for extra indulgence."
     ],
     "datePublished": "2026-02-08",
     "author": "Home Chef"
@@ -18972,35 +19049,54 @@ export const allRecipes: Recipe[] = [
     "slug": "moroccan-tagine",
     "category": "International Cuisine",
     "categorySlug": "international",
-    "description": "Delicious moroccan tagine recipe that combines traditional techniques with modern flavors.",
+    "description": "Aromatic North African stew slow-cooked with tender meat, vegetables, and warming spices. This traditional dish is bursting with exotic flavors.",
     "image": "/images/recipes/moroccan-tagine.jpg",
     "prepTime": 20,
-    "cookTime": 30,
-    "totalTime": 50,
-    "servings": 4,
+    "cookTime": 90,
+    "totalTime": 110,
+    "servings": 6,
     "difficulty": "Medium",
     "cuisine": "Moroccan",
     "dietaryTags": [],
     "ingredients": [
-      "Main ingredient",
-      "Supporting ingredients",
-      "Seasonings and spices",
-      "Garnishes"
+      "2 lbs lamb or chicken, cut into chunks",
+      "2 onions, diced",
+      "3 cloves garlic, minced",
+      "2 carrots, sliced",
+      "2 cups butternut squash, cubed",
+      "1 can chickpeas, drained",
+      "1 can diced tomatoes",
+      "2 cups chicken broth",
+      "1 tsp ground cumin",
+      "1 tsp ground coriander",
+      "1 tsp paprika",
+      "1/2 tsp cinnamon",
+      "1/2 tsp turmeric",
+      "Salt and pepper to taste",
+      "Fresh cilantro for garnish",
+      "Couscous for serving"
     ],
     "instructions": [
-      "Prepare all ingredients and equipment.",
-      "Follow traditional cooking methods.",
-      "Season to taste and serve."
+      "Heat oil in a large tagine or heavy pot over medium-high heat.",
+      "Brown meat in batches, then set aside.",
+      "Sauté onions and garlic until softened, about 5 minutes.",
+      "Add all spices and cook for 1 minute until fragrant.",
+      "Return meat to pot with tomatoes and broth.",
+      "Bring to a boil, then reduce heat and simmer covered for 45 minutes.",
+      "Add carrots, squash, and chickpeas.",
+      "Continue cooking for 45 minutes until meat is tender and vegetables are cooked.",
+      "Season with salt and pepper to taste.",
+      "Garnish with fresh cilantro and serve over couscous."
     ],
     "nutrition": {
-      "calories": 300,
-      "protein": 15,
-      "carbs": 40,
-      "fat": 10
+      "calories": 420,
+      "protein": 32,
+      "carbs": 38,
+      "fat": 16
     },
     "tips": [
-      "Use fresh, quality ingredients for best results.",
-      "Adjust seasonings to your taste preference."
+      "Use preserved lemons for authentic Moroccan flavor.",
+      "This dish tastes even better the next day after flavors meld."
     ],
     "datePublished": "2026-02-08",
     "author": "Home Chef"
