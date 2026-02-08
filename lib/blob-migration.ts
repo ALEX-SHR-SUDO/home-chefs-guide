@@ -2,6 +2,12 @@ import { put } from '@vercel/blob';
 import { readdir, readFile, writeFile, copyFile } from 'fs/promises';
 import { join, extname, basename } from 'path';
 
+export interface BackupResult {
+  success: boolean;
+  path?: string;
+  message: string;
+}
+
 export interface MigrationMapEntry {
   oldPath: string;
   localFile: string;
@@ -58,23 +64,29 @@ function getContentType(ext: string): string {
 
 /**
  * Create a backup of recipesData.ts before making changes
- * Returns the backup path on success, or an error message on failure
+ * @returns BackupResult indicating success/failure and path/message
  */
-export async function createBackup(): Promise<string> {
+export async function createBackup(): Promise<BackupResult> {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
   const backupDir = getBackupDir();
   const backupPath = join(backupDir, `recipesData.backup.${timestamp}.ts`);
   
   try {
     await copyFile(RECIPES_DATA_PATH, backupPath);
-    return backupPath;
+    return {
+      success: true,
+      path: backupPath,
+      message: `Backup created at: ${backupPath}`,
+    };
   } catch (error: any) {
     // In serverless/read-only environments, backup may fail
     // Log the error but don't fail the migration
     console.warn('Warning: Could not create backup file:', error.message);
     
-    // Return a descriptive message instead of throwing
-    return `Backup skipped (read-only filesystem): ${error.message}`;
+    return {
+      success: false,
+      message: `Backup skipped (read-only filesystem): ${error.message}`,
+    };
   }
 }
 

@@ -68,8 +68,8 @@ export async function POST() {
 
     // Create backup before migration
     console.log('Creating backup...');
-    const backupPath = await createBackup();
-    console.log(`Backup created at: ${backupPath}`);
+    const backupResult = await createBackup();
+    console.log(backupResult.message);
 
     // Upload all images with progress tracking
     console.log('Starting image upload...');
@@ -85,7 +85,7 @@ export async function POST() {
     console.log(`Updated ${urlsUpdated} URLs`);
 
     // Generate migration log
-    const migrationLog = generateMigrationLog(result, backupPath);
+    const migrationLog = generateMigrationLog(result, backupResult.path || backupResult.message);
 
     return NextResponse.json({
       success: true,
@@ -94,7 +94,8 @@ export async function POST() {
         successful: result.success,
         failed: result.failed,
         urlsUpdated,
-        backupPath,
+        backupPath: backupResult.path || backupResult.message,
+        backupSuccess: backupResult.success,
         errors: result.errors,
       },
       migrationLog,
