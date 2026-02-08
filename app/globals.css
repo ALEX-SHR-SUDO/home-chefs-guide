@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
+  }
+}
+
+@layer components {
+  .ad-space {
+    @apply bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-500 text-sm font-medium;
+  }
+  
+  .ad-space-header {
+    @apply ad-space h-[90px] md:h-[90px];
+  }
+  
+  .ad-space-sidebar {
+    @apply ad-space h-[600px] md:h-[600px] w-full md:w-[300px];
+  }
+  
+  .ad-space-content {
+    @apply ad-space h-[250px] my-6;
+  }
+  
+  .ad-space-footer {
+    @apply ad-space h-[90px];
+  }
+  
+  .recipe-card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .ad-space {
+    display: none !important;
+  }
+  
+  header, footer, nav {
+    display: none !important;
+  }
+  
+  .recipe-content {
+    page-break-inside: avoid;
+  }
+}
