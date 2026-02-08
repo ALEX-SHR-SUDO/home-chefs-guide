@@ -105,7 +105,7 @@ export default function MigratePage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `migration-log-${new Date().toISOString().split('T')[0]}.txt`;
+    a.download = `migration-log-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

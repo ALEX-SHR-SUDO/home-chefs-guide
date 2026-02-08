@@ -10,7 +10,9 @@ import {
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-export const maxDuration = 300; // 5 minutes for Vercel serverless function
+// Note: maxDuration of 300 seconds (5 minutes) requires Vercel Pro or Enterprise plan
+// Hobby plan is limited to 10 seconds. Adjust accordingly based on your plan.
+export const maxDuration = 300;
 
 /**
  * GET endpoint to check migration status and get image count

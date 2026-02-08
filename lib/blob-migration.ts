@@ -80,7 +80,11 @@ export async function uploadImageToBlob(
   const timestamp = Date.now();
   const ext = extname(file);
   const nameWithoutExt = basename(file, ext);
-  const sanitizedNameWithoutExt = nameWithoutExt.replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+  const sanitizedNameWithoutExt = nameWithoutExt
+    .replace(/[^a-z0-9-]/gi, '-')
+    .toLowerCase()
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
   const blobFilename = `recipes/${timestamp}-${sanitizedNameWithoutExt}${ext}`;
 
   onProgress?.(`Uploading ${file} to Blob...`);
