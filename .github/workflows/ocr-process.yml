@@ -1,0 +1,155 @@
+name: OCR Recipe Extraction
+
+on:
+  workflow_dispatch:
+    inputs:
+      recipe_images:
+        description: 'Comma-separated image filenames to process (leave empty for all)'
+        required: false
+        type: string
+      force_reprocess:
+        description: 'Force reprocess already processed images'
+        required: false
+        type: boolean
+        default: false
+  push:
+    paths:
+      - 'public/images/recipes/**'
+  schedule:
+    # Run weekly on Sunday at 2 AM UTC
+    - cron: '0 2 * * 0'
+
+jobs:
+  ocr-process:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Tesseract OCR
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-rus
+          tesseract --version
+
+      - name: Create OCR directories
+        run: |
+          mkdir -p data/ocr-results/raw
+          mkdir -p data/ocr-results/processed
+          mkdir -p data/ocr-results/logs
+
+      - name: Run OCR extraction
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OCR_PROVIDER: tesseract
+          OCR_LANGUAGE: eng+rus
+          OCR_DPI: 300
+          OCR_CONFIDENCE_THRESHOLD: 60
+        run: |
+          if [ -n "${{ github.event.inputs.recipe_images }}" ]; then
+            echo "Processing specific images: ${{ github.event.inputs.recipe_images }}"
+            IFS=',' read -ra IMAGES <<< "${{ github.event.inputs.recipe_images }}"
+            for img in "${IMAGES[@]}"; do
+              npm run ocr:extract -- "$img"
+            done
+          else
+            echo "Processing all images in batch mode"
+            if [ "${{ github.event.inputs.force_reprocess }}" = "true" ]; then
+              npm run ocr:batch -- --force
+            else
+              npm run ocr:batch
+            fi
+          fi
+
+      - name: Validate OCR results
+        run: npm run ocr:validate
+
+      - name: Generate extraction report
+        run: |
+          echo "# OCR Extraction Report" > ocr-report.md
+          echo "" >> ocr-report.md
+          echo "**Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> ocr-report.md
+          echo "" >> ocr-report.md
+          
+          if [ -f data/ocr-results/logs/batch-summary.json ]; then
+            echo "## Batch Processing Summary" >> ocr-report.md
+            echo '```json' >> ocr-report.md
+            cat data/ocr-results/logs/batch-summary.json >> ocr-report.md
+            echo '```' >> ocr-report.md
+            echo "" >> ocr-report.md
+          fi
+          
+          if [ -f data/ocr-results/logs/validation-report.json ]; then
+            echo "## Validation Report" >> ocr-report.md
+            echo '```json' >> ocr-report.md
+            cat data/ocr-results/logs/validation-report.json >> ocr-report.md
+            echo '```' >> ocr-report.md
+          fi
+          
+          cat ocr-report.md
+
+      - name: Upload OCR results as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ocr-results-${{ github.run_number }}
+          path: |
+            data/ocr-results/
+            ocr-report.md
+          retention-days: 30
+
+      - name: Commit and push results
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: Update OCR extraction results [skip ci]'
+          file_pattern: 'data/ocr-results/**'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          skip_dirty_check: false
+
+      - name: Create Pull Request (optional)
+        if: github.event_name != 'pull_request'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'feat: Add OCR extracted recipe data'
+          title: 'OCR Extraction Results - ${{ github.run_number }}'
+          body: |
+            ## 🤖 Automated OCR Extraction Results
+            
+            This PR contains recipe data extracted from images using OCR automation.
+            
+            ### Summary
+            - **Workflow Run:** ${{ github.run_number }}
+            - **Trigger:** ${{ github.event_name }}
+            - **Date:** ${{ github.event.head_commit.timestamp }}
+            
+            ### Files Changed
+            - Raw OCR text in `data/ocr-results/raw/`
+            - Processed JSON recipes in `data/ocr-results/processed/`
+            - Processing logs in `data/ocr-results/logs/`
+            
+            ### Next Steps
+            1. Review the extracted data for accuracy
+            2. Validate recipe information
+            3. Merge if data quality is acceptable
+            
+            ### Artifacts
+            Download the full OCR results artifact from the workflow run for detailed review.
+          branch: ocr-extraction-${{ github.run_number }}
+          delete-branch: true
