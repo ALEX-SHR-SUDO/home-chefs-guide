@@ -2,6 +2,22 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+/**
+ * Detect if running in a serverless/read-only environment
+ */
+function isServerlessEnvironment(): boolean {
+  // In serverless environments, the filesystem is read-only except for /tmp
+  // Detect serverless environments by checking for:
+  // 1. AWS Lambda: /var/task working directory
+  // 2. Vercel: VERCEL environment variable
+  // 3. Generic Lambda: AWS_LAMBDA_FUNCTION_NAME environment variable
+  return (
+    process.cwd().startsWith('/var/task') ||
+    process.env.VERCEL === '1' ||
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME
+  );
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { recipeId, newImageUrl } = await request.json();
@@ -17,9 +33,20 @@ export async function POST(request: NextRequest) {
     const recipesDataPath = path.join(process.cwd(), 'lib', 'recipesData.ts');
     let fileContent = fs.readFileSync(recipesDataPath, 'utf-8');
     
-    // Create backup (only keep the last backup to avoid accumulation)
-    const backupPath = path.join(process.cwd(), 'lib', 'recipesData.backup.ts');
-    fs.writeFileSync(backupPath, fileContent);
+    // Create backup in a location appropriate for the environment
+    // In serverless environments, use /tmp (the only writable directory)
+    // In local environments, use lib directory
+    const backupDir = isServerlessEnvironment() ? '/tmp' : path.join(process.cwd(), 'lib');
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const backupPath = path.join(backupDir, `recipesData.backup.${timestamp}.ts`);
+    
+    try {
+      fs.writeFileSync(backupPath, fileContent);
+    } catch (backupError) {
+      // Log backup failure but continue with the update
+      // This prevents the update from failing if backup fails
+      console.warn('Warning: Could not create backup file:', backupError);
+    }
     
     // Escape special regex characters in the recipeId
     const escapedRecipeId = recipeId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
