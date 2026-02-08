@@ -7,10 +7,10 @@ import ShareButtons from '@/components/ShareButtons';
 import RecipeCard from '@/components/RecipeCard';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: string;
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -22,7 +22,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const recipe = getRecipe(params.category, params.slug);
+  const { category, slug } = await params;
+  const recipe = getRecipe(category, slug);
   
   if (!recipe) {
     return {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function RecipePage({ params }: PageProps) {
-  const recipe = getRecipe(params.category, params.slug);
+export default async function RecipePage({ params }: PageProps) {
+  const { category, slug } = await params;
+  const recipe = getRecipe(category, slug);
 
   if (!recipe) {
     return (
@@ -57,11 +59,11 @@ export default function RecipePage({ params }: PageProps) {
     );
   }
 
-  const relatedRecipes = getRecipesByCategory(params.category)
+  const relatedRecipes = getRecipesByCategory(category)
     .filter(r => r.id !== recipe.id)
     .slice(0, 3);
 
-  const recipeUrl = `https://homechef-recipes.com/recipes/${params.category}/${params.slug}`;
+  const recipeUrl = `https://homechef-recipes.com/recipes/${category}/${slug}`;
 
   // Recipe JSON-LD Schema
   const recipeSchema = {
@@ -114,7 +116,7 @@ export default function RecipePage({ params }: PageProps) {
               <nav className="text-sm text-gray-600 mb-6 no-print">
                 <Link href="/" className="hover:text-primary-600">Home</Link>
                 <span className="mx-2">/</span>
-                <Link href={`/recipes/${params.category}`} className="hover:text-primary-600">
+                <Link href={`/recipes/${category}`} className="hover:text-primary-600">
                   {recipe.category}
                 </Link>
                 <span className="mx-2">/</span>
