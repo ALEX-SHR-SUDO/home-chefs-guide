@@ -23,6 +23,12 @@ export default function AdminLayout({
                   Upload Images
                 </Link>
                 <Link
+                  href="/admin/replace-photos"
+                  className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
+                >
+                  Replace Photos
+                </Link>
+                <Link
                   href="/admin/migrate"
                   className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
                 >
