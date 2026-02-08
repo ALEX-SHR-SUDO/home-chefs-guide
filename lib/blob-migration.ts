@@ -28,20 +28,26 @@ const RECIPES_DIR = join(process.cwd(), 'public', 'images', 'recipes');
 const RECIPES_DATA_PATH = join(process.cwd(), 'lib', 'recipesData.ts');
 
 /**
- * Cached backup directory - determined once at module load
+ * Detect if running in a serverless/read-only environment
  */
-const BACKUP_DIR = (() => {
+function isServerlessEnvironment(): boolean {
   // In serverless environments, the filesystem is read-only except for /tmp
   // Detect serverless environments by checking for:
   // 1. AWS Lambda: /var/task working directory
   // 2. Vercel: VERCEL environment variable
   // 3. Generic Lambda: AWS_LAMBDA_FUNCTION_NAME environment variable
-  const isServerless = 
+  return (
     process.cwd().startsWith('/var/task') ||
     process.env.VERCEL === '1' ||
-    !!process.env.AWS_LAMBDA_FUNCTION_NAME;
-  
-  return isServerless ? '/tmp' : join(process.cwd(), 'lib');
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME
+  );
+}
+
+/**
+ * Cached backup directory - determined once at module load
+ */
+const BACKUP_DIR = (() => {
+  return isServerlessEnvironment() ? '/tmp' : join(process.cwd(), 'lib');
 })();
 
 /**
@@ -194,6 +200,13 @@ export async function uploadAllImages(
 export async function updateRecipeUrls(
   migrationMap: MigrationMapEntry[]
 ): Promise<number> {
+  // Skip update in serverless/read-only environments
+  if (isServerlessEnvironment()) {
+    console.warn('Warning: Cannot update recipesData.ts in serverless environment (read-only filesystem)');
+    console.warn('Migration can only update URLs when running locally with write permissions');
+    return 0;
+  }
+
   // Read recipesData.ts
   let recipesContent = await readFile(RECIPES_DATA_PATH, 'utf-8');
 
