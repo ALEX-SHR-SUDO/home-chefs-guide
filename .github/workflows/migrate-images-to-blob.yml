@@ -1,0 +1,85 @@
+name: Migrate Images to Vercel Blob
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_migration:
+        description: 'Type "migrate" to confirm'
+        required: true
+        type: string
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm_migration == 'migrate'
+    
+    permissions:
+      contents: write  # Required for committing changes and creating PRs
+      pull-requests: write  # Required for creating pull requests
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Upload images to Blob
+        run: npm run blob:upload
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          
+      - name: Update recipe URLs
+        run: npm run blob:update-urls
+        
+      - name: Cleanup local images
+        run: npm run blob:cleanup
+        
+      - name: Validate migration
+        run: npm run blob:validate
+        
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: migrate recipe images to Vercel Blob'
+          file_pattern: 'lib/recipesData.ts scripts/blob-migration-map.json .gitignore'
+          
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: blob-migration-${{ github.run_number }}
+          title: 'Migrate recipe images to Vercel Blob'
+          body: |
+            ## Automated Image Migration to Vercel Blob
+            
+            This PR migrates all recipe images from local storage to Vercel Blob storage.
+            
+            ### Changes
+            - ✅ Uploaded all images to Vercel Blob
+            - ✅ Updated recipe URLs in `recipesData.ts`
+            - ✅ Cleaned up local images
+            - ✅ Updated `.gitignore`
+            
+            ### Validation
+            Migration validation passed successfully.
+            
+            ### Migration Map
+            See `scripts/blob-migration-map.json` for complete migration log.
+            
+            ### Next Steps
+            1. Review changes
+            2. Test locally if needed
+            3. Merge this PR to complete migration
+            
+            ---
+            *Automated by GitHub Actions*
+          labels: |
+            automated
+            infrastructure
