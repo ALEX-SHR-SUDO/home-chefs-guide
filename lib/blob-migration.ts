@@ -25,16 +25,21 @@ const RECIPES_DATA_PATH = join(process.cwd(), 'lib', 'recipesData.ts');
  * Get backup directory - use /tmp for serverless/read-only environments
  */
 function getBackupDir(): string {
-  // In serverless environments (like Vercel/Lambda), the filesystem is read-only
-  // except for /tmp. Check if we can write to the lib directory, otherwise use /tmp
-  const localBackupDir = join(process.cwd(), 'lib');
+  // In serverless environments, the filesystem is read-only except for /tmp
+  // Detect serverless environments by checking for:
+  // 1. AWS Lambda: /var/task working directory
+  // 2. Vercel: VERCEL environment variable
+  // 3. Generic Lambda: AWS_LAMBDA_FUNCTION_NAME environment variable
+  const isServerless = 
+    process.cwd().startsWith('/var/task') ||
+    process.env.VERCEL === '1' ||
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME;
   
-  // Use /tmp for serverless environments (indicated by /var/task path)
-  if (process.cwd().startsWith('/var/task')) {
+  if (isServerless) {
     return '/tmp';
   }
   
-  return localBackupDir;
+  return join(process.cwd(), 'lib');
 }
 
 /**

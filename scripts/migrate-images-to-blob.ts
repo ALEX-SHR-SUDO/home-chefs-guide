@@ -19,9 +19,17 @@ const MIGRATION_MAP_PATH = join(process.cwd(), 'scripts', 'blob-migration-map.js
  * Get backup directory - use /tmp for serverless/read-only environments
  */
 function getBackupDir(): string {
-  // In serverless environments (like Vercel/Lambda), the filesystem is read-only
-  // except for /tmp. Use /tmp for such environments
-  if (process.cwd().startsWith('/var/task')) {
+  // In serverless environments, the filesystem is read-only except for /tmp
+  // Detect serverless environments by checking for:
+  // 1. AWS Lambda: /var/task working directory
+  // 2. Vercel: VERCEL environment variable
+  // 3. Generic Lambda: AWS_LAMBDA_FUNCTION_NAME environment variable
+  const isServerless = 
+    process.cwd().startsWith('/var/task') ||
+    process.env.VERCEL === '1' ||
+    !!process.env.AWS_LAMBDA_FUNCTION_NAME;
+  
+  if (isServerless) {
     return '/tmp';
   }
   
