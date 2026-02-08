@@ -344,7 +344,9 @@ export default function ReplacePhotosPage() {
                           onClick={() => {
                             setPreview('');
                             setUploadedUrl('');
-                            fileInputRef.current!.value = '';
+                            if (fileInputRef.current) {
+                              fileInputRef.current.value = '';
+                            }
                           }}
                           className="text-sm text-blue-600 hover:text-blue-700"
                         >
