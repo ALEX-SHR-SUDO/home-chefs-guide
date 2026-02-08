@@ -4,9 +4,9 @@ import RecipeCard from '@/components/RecipeCard';
 import { getRecipesByCategory, categories } from '@/lib/recipes';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -16,7 +16,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const category = categories.find(c => c.slug === params.category);
+  const { category: categorySlug } = await params;
+  const category = categories.find(c => c.slug === categorySlug);
   
   if (!category) {
     return {
@@ -34,9 +35,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function CategoryPage({ params }: PageProps) {
-  const category = categories.find(c => c.slug === params.category);
-  const recipes = getRecipesByCategory(params.category);
+export default async function CategoryPage({ params }: PageProps) {
+  const { category: categorySlug } = await params;
+  const category = categories.find(c => c.slug === categorySlug);
+  const recipes = getRecipesByCategory(categorySlug);
 
   if (!category) {
     return (
@@ -109,7 +111,7 @@ export default function CategoryPage({ params }: PageProps) {
                 </h3>
                 <ul className="space-y-3">
                   {categories
-                    .filter(c => c.slug !== params.category)
+                    .filter(c => c.slug !== categorySlug)
                     .slice(0, 6)
                     .map((c) => (
                       <li key={c.slug}>
