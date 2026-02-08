@@ -1,18 +1,22 @@
 import { NextResponse } from 'next/server';
 import { getAllRecipes } from '@/lib/recipes';
+import { loadRecipeOverrides, getRecipeImageUrl } from '@/lib/recipeOverrides';
 
 export async function GET() {
   try {
     const recipes = getAllRecipes();
     
-    // Return only essential data for the admin panel
+    // Load recipe image overrides from Vercel Blob
+    const overrides = await loadRecipeOverrides();
+    
+    // Return only essential data for the admin panel, with overridden images
     const recipesData = recipes.map(recipe => ({
       id: recipe.id,
       title: recipe.title,
       slug: recipe.slug,
       category: recipe.category,
       categorySlug: recipe.categorySlug,
-      image: recipe.image,
+      image: getRecipeImageUrl(recipe.id, recipe.image, overrides),
     }));
     
     return NextResponse.json({ recipes: recipesData });
