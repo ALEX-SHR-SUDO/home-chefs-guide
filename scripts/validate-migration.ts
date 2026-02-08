@@ -80,19 +80,26 @@ async function validateMigration(): Promise<void> {
       console.log('✅ All Blob URLs found in recipesData.ts\n');
     }
 
-    // Validate URL accessibility
+    // Validate URL accessibility with concurrent requests
     console.log('🌐 Validating URL accessibility (this may take a while)...\n');
     const results: ValidationResult[] = [];
     
-    for (let i = 0; i < urls.length; i++) {
-      const url = urls[i];
-      process.stdout.write(`\r[${i + 1}/${urls.length}] Checking URLs...`);
+    // Process in batches to avoid rate limiting
+    const batchSize = 10;
+    for (let i = 0; i < urls.length; i += batchSize) {
+      const batch = urls.slice(i, Math.min(i + batchSize, urls.length));
+      process.stdout.write(`\r[${i}/${urls.length}] Checking URLs...`);
       
-      const result = await checkUrlAccessibility(url);
-      results.push(result);
+      // Check batch concurrently
+      const batchResults = await Promise.all(
+        batch.map(url => checkUrlAccessibility(url))
+      );
+      results.push(...batchResults);
       
-      // Add small delay to avoid rate limiting
-      await new Promise(resolve => setTimeout(resolve, 100));
+      // Small delay between batches to be nice to the server
+      if (i + batchSize < urls.length) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
     }
     
     console.log('\n');

@@ -13,6 +13,7 @@ export default function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
   const [uploadedUrl, setUploadedUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -86,7 +87,8 @@ export default function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
   const copyToClipboard = async () => {
     if (uploadedUrl) {
       await navigator.clipboard.writeText(uploadedUrl);
-      alert('URL copied to clipboard!');
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
     }
   };
 
@@ -171,9 +173,18 @@ export default function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
                 />
                 <button
                   onClick={copyToClipboard}
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors flex items-center gap-2"
                 >
-                  Copy URL
+                  {copySuccess ? (
+                    <>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Copied!
+                    </>
+                  ) : (
+                    'Copy URL'
+                  )}
                 </button>
               </div>
             </div>

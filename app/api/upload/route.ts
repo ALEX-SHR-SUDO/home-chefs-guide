@@ -34,10 +34,18 @@ export async function POST(request: NextRequest) {
 
     // Generate unique filename with timestamp and sanitized name
     const timestamp = Date.now();
-    const sanitizedName = file.name
+    let sanitizedName = file.name
       .toLowerCase()
       .replace(/[^a-z0-9.-]/g, '-')
-      .replace(/-+/g, '-');
+      .replace(/-+/g, '-')
+      .replace(/^[.-]+/, '') // Remove leading dots and dashes
+      .replace(/[.-]+$/, ''); // Remove trailing dots and dashes
+    
+    // Ensure filename is not empty and has valid characters
+    if (!sanitizedName || sanitizedName.length === 0) {
+      sanitizedName = 'image';
+    }
+    
     const filename = `${timestamp}-${sanitizedName}`;
 
     // Upload to Vercel Blob in recipes folder

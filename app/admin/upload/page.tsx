@@ -4,14 +4,27 @@ import { useState } from 'react';
 import ImageUploader from '@/components/ImageUploader';
 
 export default function AdminUploadPage() {
-  const [recentUploads, setRecentUploads] = useState<Array<{ url: string; timestamp: string }>>([]);
+  const [recentUploads, setRecentUploads] = useState<Array<{ url: string; timestamp: string; copied?: boolean }>>([]);
 
   const handleUploadSuccess = (url: string) => {
     const newUpload = {
       url,
       timestamp: new Date().toLocaleString(),
+      copied: false,
     };
     setRecentUploads([newUpload, ...recentUploads.slice(0, 9)]); // Keep last 10
+  };
+
+  const handleCopy = async (index: number, url: string) => {
+    await navigator.clipboard.writeText(url);
+    const updated = [...recentUploads];
+    updated[index].copied = true;
+    setRecentUploads(updated);
+    setTimeout(() => {
+      const reset = [...recentUploads];
+      reset[index].copied = false;
+      setRecentUploads(reset);
+    }, 2000);
   };
 
   return (
@@ -57,13 +70,19 @@ export default function AdminUploadPage() {
                     </div>
                   </div>
                   <button
-                    onClick={async () => {
-                      await navigator.clipboard.writeText(upload.url);
-                      alert('URL copied!');
-                    }}
-                    className="ml-4 px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors flex-shrink-0"
+                    onClick={() => handleCopy(index, upload.url)}
+                    className="ml-4 px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors flex-shrink-0 flex items-center gap-1"
                   >
-                    Copy
+                    {upload.copied ? (
+                      <>
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Copied
+                      </>
+                    ) : (
+                      'Copy'
+                    )}
                   </button>
                 </div>
               ))}
