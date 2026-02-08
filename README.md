@@ -60,6 +60,13 @@ Strategic ad placements with placeholder divs:
 - Privacy Policy page
 - Terms of Service page
 
+### Admin Panel
+- **Image Upload**: Upload recipe images to Vercel Blob storage (`/admin/upload`)
+- **Photo Replacement**: Replace existing recipe photos dynamically (`/admin/replace-photos`)
+- **Image Migration**: Migrate images from local storage to Vercel Blob (`/admin/migrate`)
+- **Serverless Compatible**: Works in read-only filesystem environments
+- See [Photo Replacement Guide](docs/PHOTO_REPLACEMENT.md) for details
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -79,12 +86,24 @@ Strategic ad placements with placeholder divs:
    npm install
    ```
 
-3. **Run development server**
+3. **Set up environment variables** (Optional, for admin features)
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Edit `.env.local` and add your Vercel Blob token:
+   ```
+   BLOB_READ_WRITE_TOKEN=vercel_blob_rw_xxxxxxxxxxxxx
+   ```
+   
+   Get the token from [Vercel Dashboard → Storage → Blob](https://vercel.com/dashboard)
+
+4. **Run development server**
    ```bash
    npm run dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ### Build for Production
