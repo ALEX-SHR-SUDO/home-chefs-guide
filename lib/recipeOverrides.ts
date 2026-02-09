@@ -92,8 +92,14 @@ function isBlobUrl(url: string): boolean {
   try {
     const parsedUrl = new URL(url);
     const hostname = parsedUrl.hostname;
-    // Vercel Blob URLs typically have these hostnames
-    return hostname.endsWith('blob.vercel-storage.com') || hostname.endsWith('.blob.vercel.app');
+    // Vercel Blob URLs have specific hostname patterns
+    // Either exactly 'blob.vercel-storage.com' or ends with '.blob.vercel-storage.com'
+    // Or ends with '.blob.vercel.app'
+    return (
+      hostname === 'blob.vercel-storage.com' ||
+      hostname.endsWith('.blob.vercel-storage.com') ||
+      hostname.endsWith('.blob.vercel.app')
+    );
   } catch {
     // Invalid URL, not a blob URL
     return false;
