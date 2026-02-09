@@ -1,5 +1,7 @@
 # Recipe Photo Replacement System
 
+> **Current Status:** This repository uses SVG placeholder images for all recipes. No actual photo files (.jpg, .png, .webp) are stored in git. See [RECIPE_IMAGES_STATUS.md](../RECIPE_IMAGES_STATUS.md) for details.
+
 ## Overview
 
 The recipe photo replacement system allows you to update recipe images dynamically without modifying the source code or redeploying the application. This is designed to work in serverless environments like Vercel where the filesystem is read-only.

@@ -1,11 +1,13 @@
 # Vercel Blob Storage Integration - Quick Reference
 
+> **Note:** This repository currently stores SVG placeholder images, not photo files. The examples below show how the system would work if migrating from local photo files to Vercel Blob storage.
+
 ## 🎯 What This Does
 
 Transforms your recipe app from storing images locally to using Vercel Blob (cloud storage):
 
 ```
-BEFORE: /images/recipes/naan.jpg (local file)
+BEFORE: /images/recipes/naan.jpg (local file - example only, actual files are .svg)
 AFTER:  https://xyz.blob.vercel-storage.com/recipes/1234567890-naan.jpg (cloud URL)
 ```
 

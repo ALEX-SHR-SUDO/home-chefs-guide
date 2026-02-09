@@ -1,5 +1,7 @@
 # Migration Scripts
 
+> **Note:** This repository currently uses SVG placeholders, not actual photo files. These scripts are designed for hypothetical scenarios where you would migrate local photo files to Vercel Blob storage.
+
 This directory contains scripts for migrating recipe images to Vercel Blob storage.
 
 ## Scripts Overview

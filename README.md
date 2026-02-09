@@ -60,6 +60,13 @@ Strategic ad placements with placeholder divs:
 - Privacy Policy page
 - Terms of Service page
 
+### Recipe Images
+- **SVG Placeholders**: 380+ scalable vector images (no photo files in git)
+- **Efficient Storage**: ~1.6MB total for all recipe images
+- **Dynamic Uploads**: Admin panel supports uploading photos to Vercel Blob
+- **Hybrid Approach**: SVG placeholders as defaults, real photos via cloud storage
+- See [Recipe Images Status](RECIPE_IMAGES_STATUS.md) for details
+
 ### Admin Panel
 - **Image Upload**: Upload recipe images to Vercel Blob storage (`/admin/upload`)
 - **Photo Replacement**: Replace existing recipe photos dynamically (`/admin/replace-photos`)
@@ -144,6 +151,7 @@ home-chefs-guide/
 │   └── recipesData.ts             # All 380+ recipes data
 ├── public/
 │   ├── images/                    # Image assets
+│   │   └── recipes/               # SVG placeholder images (380+)
 │   └── favicon.svg                # Site favicon
 ├── next.config.js                 # Next.js configuration
 ├── tailwind.config.ts             # Tailwind CSS configuration
@@ -299,7 +307,7 @@ Target scores:
      category: 'Category Name',
      categorySlug: 'category-slug',
      description: 'Engaging 2-3 sentence description',
-     image: '/images/recipes/recipe-name.jpg',
+     image: '/images/recipes/recipe-name.svg',
      prepTime: 15,
      cookTime: 30,
      totalTime: 45,
