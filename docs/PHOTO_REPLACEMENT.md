@@ -11,12 +11,16 @@ The recipe photo replacement system allows you to update recipe images dynamical
 1. **Base Recipe Data**: Stored in `lib/recipesData.ts` (read-only in production)
 2. **Image Overrides**: Stored in Vercel Blob as a JSON file (`recipe-overrides.json`)
 3. **Merge Layer**: API endpoints merge base data with overrides at runtime
+4. **Automatic Cleanup**: Old blob files are automatically deleted when replaced
 
 When you replace a recipe photo:
 - The new image is uploaded to Vercel Blob
+- If an old blob image exists for that recipe, it is automatically deleted
 - An override entry is created linking the recipe ID to the new image URL
 - The override is saved to `recipe-overrides.json` in Vercel Blob
 - The admin panel and API endpoints automatically use the new image
+
+**Note:** Only Vercel Blob storage files are deleted. External URLs (e.g., from other domains) are preserved to avoid accidental data loss.
 
 ### File Structure
 
@@ -134,6 +138,24 @@ To see photo changes on the main site:
 4. **Fast Updates**: Admin panel shows changes immediately
 5. **Backup Friendly**: Original data remains untouched
 6. **Scalable**: Blob storage handles unlimited images
+7. **Automatic Cleanup**: Old blob files are automatically deleted, preventing storage waste
+
+## Storage Management
+
+### Automatic Cleanup
+
+When you replace a recipe photo through the admin panel:
+- The system automatically deletes the old blob file from Vercel Blob storage
+- Only Vercel Blob URLs are deleted (external URLs are preserved)
+- Deletion failures are logged but don't block the update
+- This prevents accumulation of unused files and saves storage costs
+
+### Manual Cleanup
+
+If you need to manually clean up blob storage:
+1. Navigate to Vercel Dashboard → Storage → Blob
+2. Browse the `recipes/` folder
+3. Identify and delete unused files
 
 ## Troubleshooting
 
