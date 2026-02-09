@@ -89,8 +89,15 @@ export async function saveRecipeOverrides(overrides: RecipeOverrides): Promise<v
  * Check if a URL is a Vercel Blob URL
  */
 function isBlobUrl(url: string): boolean {
-  // Vercel Blob URLs typically contain 'blob.vercel-storage.com'
-  return url.includes('blob.vercel-storage.com') || url.includes('.blob.vercel.app');
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname;
+    // Vercel Blob URLs typically have these hostnames
+    return hostname.endsWith('blob.vercel-storage.com') || hostname.endsWith('.blob.vercel.app');
+  } catch {
+    // Invalid URL, not a blob URL
+    return false;
+  }
 }
 
 /**
