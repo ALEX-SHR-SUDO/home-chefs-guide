@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { getRecipe, getAllRecipes, getRecipesByCategory } from '@/lib/recipes';
+import RecipeImage from '@/components/RecipeImage';
 import PrintButton from '@/components/PrintButton';
 import ShareButtons from '@/components/ShareButtons';
 import RecipeCard from '@/components/RecipeCard';
@@ -190,13 +190,13 @@ export default async function RecipePage({ params }: PageProps) {
 
                 {/* Right Column - Image */}
                 <div className="relative h-96 lg:h-auto rounded-xl overflow-hidden shadow-xl">
-                  <Image
+                  <RecipeImage
                     src={recipe.image}
                     alt={recipe.title}
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    width={800}
+                    height={600}
+                    priority={true}
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -313,12 +313,12 @@ export default async function RecipePage({ params }: PageProps) {
                             className="block group"
                           >
                             <div className="relative h-32 mb-2 rounded-lg overflow-hidden">
-                              <Image
+                              <RecipeImage
                                 src={related.image}
                                 alt={related.title}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform"
-                                sizes="300px"
+                                width={300}
+                                height={200}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                               />
                             </div>
                             <h4 className="font-semibold group-hover:text-primary-600 transition-colors line-clamp-2">

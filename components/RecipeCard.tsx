@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import RecipeImage from '@/components/RecipeImage';
 import { Recipe } from '@/lib/types';
 
 interface RecipeCardProps {
@@ -10,12 +10,12 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
   return (
     <Link href={`/recipes/${recipe.categorySlug}/${recipe.slug}`} className="recipe-card group">
       <div className="relative h-48 overflow-hidden">
-        <Image
+        <RecipeImage
           src={recipe.image}
           alt={recipe.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          width={400}
+          height={300}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-2 right-2 bg-white px-3 py-1 rounded-full text-sm font-medium">
           {recipe.difficulty}
