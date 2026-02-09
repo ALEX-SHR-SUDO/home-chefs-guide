@@ -1,4 +1,4 @@
-import { put, list } from '@vercel/blob';
+import { put, list, del } from '@vercel/blob';
 
 const OVERRIDES_BLOB_NAME = 'recipe-overrides.json';
 
@@ -86,11 +86,51 @@ export async function saveRecipeOverrides(overrides: RecipeOverrides): Promise<v
 }
 
 /**
+ * Check if a URL is a Vercel Blob URL
+ */
+function isBlobUrl(url: string): boolean {
+  // Vercel Blob URLs typically contain 'blob.vercel-storage.com'
+  return url.includes('blob.vercel-storage.com') || url.includes('.blob.vercel.app');
+}
+
+/**
+ * Delete a blob file from Vercel Blob storage
+ */
+async function deleteBlobFile(url: string): Promise<void> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  
+  if (!token) {
+    console.warn('Cannot delete blob file: BLOB_READ_WRITE_TOKEN is not configured');
+    return;
+  }
+
+  if (!isBlobUrl(url)) {
+    console.log('URL is not a blob URL, skipping deletion:', url);
+    return;
+  }
+
+  try {
+    await del(url, { token });
+    console.log('Successfully deleted old blob file:', url);
+  } catch (error) {
+    // Log but don't throw - we don't want deletion failures to block the update
+    console.error('Failed to delete old blob file:', url, error);
+  }
+}
+
+/**
  * Update a single recipe's image URL
  */
 export async function updateRecipeImage(recipeId: string, imageUrl: string): Promise<void> {
   // Load existing overrides
   const overrides = await loadRecipeOverrides();
+
+  // Check if there's an existing override with a blob URL to delete
+  const existingOverride = overrides[recipeId];
+  if (existingOverride?.imageUrl && isBlobUrl(existingOverride.imageUrl)) {
+    // Delete the old blob file before updating to the new one
+    await deleteBlobFile(existingOverride.imageUrl);
+  }
 
   // Add/update this recipe's override
   overrides[recipeId] = {
