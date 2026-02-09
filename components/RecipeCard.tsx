@@ -10,15 +10,13 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
   return (
     <Link href={`/recipes/${recipe.categorySlug}/${recipe.slug}`} className="recipe-card group">
       <div className="relative h-48 overflow-hidden">
-        <div className="relative w-full h-full">
-          <RecipeImage
-            src={recipe.image}
-            alt={recipe.title}
-            width={400}
-            height={300}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+        <RecipeImage
+          src={recipe.image}
+          alt={recipe.title}
+          width={400}
+          height={300}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
         <div className="absolute top-2 right-2 bg-white px-3 py-1 rounded-full text-sm font-medium">
           {recipe.difficulty}
         </div>
