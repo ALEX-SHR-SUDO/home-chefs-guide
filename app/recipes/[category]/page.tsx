@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import RecipeCard from '@/components/RecipeCard';
-import { getRecipesByCategory, categories } from '@/lib/recipes';
+import { getRecipesByCategoryWithOverrides, categories } from '@/lib/recipes';
 
 interface PageProps {
   params: Promise<{
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function CategoryPage({ params }: PageProps) {
   const { category: categorySlug } = await params;
   const category = categories.find(c => c.slug === categorySlug);
-  const recipes = getRecipesByCategory(categorySlug);
+  const recipes = await getRecipesByCategoryWithOverrides(categorySlug);
 
   if (!category) {
     return (

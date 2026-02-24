@@ -118,3 +118,17 @@ export async function getRecipeWithOverrides(categorySlug: string, recipeSlug: s
     image: getRecipeImageUrl(recipe.id, recipe.image, overrides),
   };
 }
+
+/**
+ * Get recipes for a category with image overrides applied
+ * This is async and should be used in API routes or server components
+ */
+export async function getRecipesByCategoryWithOverrides(categorySlug: string): Promise<Recipe[]> {
+  const overrides = await loadRecipeOverrides();
+  return sampleRecipes
+    .filter(recipe => recipe.categorySlug === categorySlug)
+    .map(recipe => ({
+      ...recipe,
+      image: getRecipeImageUrl(recipe.id, recipe.image, overrides),
+    }));
+}
