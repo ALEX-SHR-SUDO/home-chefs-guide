@@ -2,6 +2,13 @@ import { put, list, del } from '@vercel/blob';
 
 const OVERRIDES_BLOB_NAME = 'recipe-overrides.json';
 
+// In-memory cache to reduce concurrent Vercel Blob API requests
+const CACHE_TTL_MS = 60 * 1000; // 1 minute
+let cachedOverrides: RecipeOverrides | null = null;
+let cacheExpiry = 0;
+let inFlightRequest: Promise<RecipeOverrides> | null = null;
+let cacheVersion = 0; // Incremented on invalidation to discard stale in-flight results
+
 export interface RecipeImageOverride {
   recipeId: string;
   imageUrl: string;
@@ -13,16 +20,9 @@ export interface RecipeOverrides {
 }
 
 /**
- * Load recipe image overrides from Vercel Blob storage
+ * Fetch recipe image overrides from Vercel Blob storage (no caching)
  */
-export async function loadRecipeOverrides(): Promise<RecipeOverrides> {
-  const token = process.env.BLOB_READ_WRITE_TOKEN;
-  
-  if (!token) {
-    // No token configured, return empty overrides
-    return {};
-  }
-
+async function fetchOverridesFromBlob(token: string, version: number): Promise<RecipeOverrides> {
   try {
     // List blobs to find our overrides file
     const { blobs } = await list({
@@ -30,7 +30,7 @@ export async function loadRecipeOverrides(): Promise<RecipeOverrides> {
       prefix: OVERRIDES_BLOB_NAME,
       limit: 1,
     });
-    
+
     // If no blob found, return empty object
     if (blobs.length === 0) {
       return {};
@@ -44,18 +44,53 @@ export async function loadRecipeOverrides(): Promise<RecipeOverrides> {
     }
 
     const overrides = await response.json();
-    
+
     // Validate that overrides is an object
     if (typeof overrides !== 'object' || overrides === null || Array.isArray(overrides)) {
       console.warn('Invalid overrides format, expected object');
       return {};
     }
-    
+
+    // Only update the cache if it hasn't been invalidated since this fetch started
+    if (cacheVersion === version) {
+      cachedOverrides = overrides;
+      cacheExpiry = Date.now() + CACHE_TTL_MS;
+    }
+
     return overrides;
   } catch (error) {
     console.error('Error loading recipe overrides:', error);
     return {};
   }
+}
+
+/**
+ * Load recipe image overrides from Vercel Blob storage.
+ * Results are cached for CACHE_TTL_MS and concurrent calls share a single request.
+ */
+export async function loadRecipeOverrides(): Promise<RecipeOverrides> {
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+
+  if (!token) {
+    // No token configured, return empty overrides
+    return {};
+  }
+
+  // Return cached value if still valid
+  if (cachedOverrides !== null && Date.now() < cacheExpiry) {
+    return cachedOverrides;
+  }
+
+  // Deduplicate concurrent in-flight requests
+  if (inFlightRequest) {
+    return inFlightRequest;
+  }
+
+  inFlightRequest = fetchOverridesFromBlob(token, cacheVersion).finally(() => {
+    inFlightRequest = null;
+  });
+
+  return inFlightRequest;
 }
 
 /**
@@ -79,6 +114,14 @@ export async function saveRecipeOverrides(overrides: RecipeOverrides): Promise<v
       addRandomSuffix: false, // Always use the same name to overwrite
       token,
     });
+
+    // Invalidate the cache so the next read fetches fresh data.
+    // Incrementing cacheVersion prevents any in-flight read from overwriting
+    // the cache with stale data after this invalidation.
+    cacheVersion++;
+    cachedOverrides = null;
+    cacheExpiry = 0;
+    inFlightRequest = null;
   } catch (error) {
     console.error('Error saving recipe overrides:', error);
     throw error;
