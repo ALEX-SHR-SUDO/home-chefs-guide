@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 import { updateRecipeImage } from '@/lib/recipeOverrides';
 
@@ -22,6 +23,9 @@ export async function POST(request: NextRequest) {
     
     // Update the recipe image in Vercel Blob storage
     await updateRecipeImage(recipeId, newImageUrl);
+
+    // Revalidate all cached pages so the updated image is reflected site-wide
+    revalidatePath('/', 'layout');
     
     return NextResponse.json({
       success: true,
