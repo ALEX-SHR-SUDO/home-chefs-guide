@@ -1,9 +1,10 @@
 import { Recipe } from './types';
+import { dishNames } from './eda';
 
 export const allRecipes: Recipe[] = [
   {
     "id": "1",
-    "title": "Fluffy Pancakes",
+    "title": dishNames[0],
     "slug": "fluffy-pancakes",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -52,7 +53,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "2",
-    "title": "Belgian Waffles",
+    "title": dishNames[1],
     "slug": "belgian-waffles",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -102,7 +103,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "3",
-    "title": "French Toast",
+    "title": dishNames[2],
     "slug": "french-toast",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -156,7 +157,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "4",
-    "title": "Breakfast Burrito",
+    "title": dishNames[3],
     "slug": "breakfast-burrito",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -202,7 +203,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "5",
-    "title": "Eggs Benedict",
+    "title": dishNames[4],
     "slug": "eggs-benedict",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -248,7 +249,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "6",
-    "title": "Shakshuka",
+    "title": dishNames[5],
     "slug": "shakshuka",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -298,7 +299,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "7",
-    "title": "Avocado Toast",
+    "title": dishNames[6],
     "slug": "avocado-toast",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -344,7 +345,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "8",
-    "title": "Breakfast Sandwich",
+    "title": dishNames[7],
     "slug": "breakfast-sandwich",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -397,7 +398,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "9",
-    "title": "Omelette",
+    "title": dishNames[8],
     "slug": "omelette",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -451,7 +452,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "10",
-    "title": "Frittata",
+    "title": dishNames[9],
     "slug": "frittata",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -500,7 +501,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "11",
-    "title": "Breakfast Hash",
+    "title": dishNames[10],
     "slug": "breakfast-hash",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -548,7 +549,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "12",
-    "title": "Quiche",
+    "title": dishNames[11],
     "slug": "quiche",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -595,7 +596,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "13",
-    "title": "Crepes",
+    "title": dishNames[12],
     "slug": "crepes",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -648,7 +649,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "14",
-    "title": "Breakfast Bowl",
+    "title": dishNames[13],
     "slug": "breakfast-bowl",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -695,7 +696,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "15",
-    "title": "Granola Parfait",
+    "title": dishNames[14],
     "slug": "granola-parfait",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -744,7 +745,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "16",
-    "title": "Smoothie Bowl",
+    "title": dishNames[15],
     "slug": "smoothie-bowl",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -790,7 +791,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "17",
-    "title": "Breakfast Tacos",
+    "title": dishNames[16],
     "slug": "breakfast-tacos",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -840,7 +841,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "18",
-    "title": "Huevos Rancheros",
+    "title": dishNames[17],
     "slug": "huevos-rancheros",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -891,7 +892,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "19",
-    "title": "Bagel and Lox",
+    "title": dishNames[18],
     "slug": "bagel-and-lox",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -941,7 +942,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "20",
-    "title": "Breakfast Pizza",
+    "title": dishNames[19],
     "slug": "breakfast-pizza",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -992,7 +993,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "21",
-    "title": "Cinnamon Rolls",
+    "title": dishNames[20],
     "slug": "cinnamon-rolls",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1041,7 +1042,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "22",
-    "title": "Scones",
+    "title": dishNames[21],
     "slug": "scones",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1087,7 +1088,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "23",
-    "title": "Muffins",
+    "title": dishNames[22],
     "slug": "muffins",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1140,7 +1141,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "24",
-    "title": "Coffee Cake",
+    "title": dishNames[23],
     "slug": "coffee-cake",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1188,7 +1189,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "25",
-    "title": "Breakfast Quesadilla",
+    "title": dishNames[24],
     "slug": "breakfast-quesadilla",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1237,7 +1238,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "26",
-    "title": "Egg Muffins",
+    "title": dishNames[25],
     "slug": "egg-muffins",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1291,7 +1292,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "27",
-    "title": "Chia Pudding",
+    "title": dishNames[26],
     "slug": "chia-pudding",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1336,7 +1337,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "28",
-    "title": "Overnight Oats",
+    "title": dishNames[27],
     "slug": "overnight-oats",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1382,7 +1383,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "29",
-    "title": "Breakfast Casserole",
+    "title": dishNames[28],
     "slug": "breakfast-casserole",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1434,7 +1435,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "30",
-    "title": "Dutch Baby Pancake",
+    "title": dishNames[29],
     "slug": "dutch-baby-pancake",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1487,7 +1488,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "31",
-    "title": "Biscuits and Gravy",
+    "title": dishNames[30],
     "slug": "biscuits-and-gravy",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1536,7 +1537,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "32",
-    "title": "English Breakfast",
+    "title": dishNames[31],
     "slug": "english-breakfast",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1591,7 +1592,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "33",
-    "title": "Protein Pancakes",
+    "title": dishNames[32],
     "slug": "protein-pancakes",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1645,7 +1646,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "34",
-    "title": "Sweet Potato Hash",
+    "title": dishNames[33],
     "slug": "sweet-potato-hash",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1693,7 +1694,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "35",
-    "title": "Breakfast Skillet",
+    "title": dishNames[34],
     "slug": "breakfast-skillet",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1745,7 +1746,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "36",
-    "title": "Croque Madame",
+    "title": dishNames[35],
     "slug": "croque-madame",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1799,7 +1800,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "37",
-    "title": "Smoked Salmon Bagel",
+    "title": dishNames[36],
     "slug": "smoked-salmon-bagel",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1852,7 +1853,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "38",
-    "title": "Breakfast Risotto",
+    "title": dishNames[37],
     "slug": "breakfast-risotto",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1899,7 +1900,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "39",
-    "title": "Morning Glory Muffins",
+    "title": dishNames[38],
     "slug": "morning-glory-muffins",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1948,7 +1949,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "40",
-    "title": "Breakfast Flatbread",
+    "title": dishNames[39],
     "slug": "breakfast-flatbread",
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
@@ -1995,7 +1996,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "41",
-    "title": "Club Sandwich",
+    "title": dishNames[40],
     "slug": "club-sandwich",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2050,7 +2051,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "42",
-    "title": "Caesar Salad",
+    "title": dishNames[41],
     "slug": "caesar-salad",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2095,7 +2096,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "43",
-    "title": "Chicken Wrap",
+    "title": dishNames[42],
     "slug": "chicken-wrap",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2148,7 +2149,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "44",
-    "title": "Tomato Soup",
+    "title": dishNames[43],
     "slug": "tomato-soup",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2196,7 +2197,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "45",
-    "title": "Grilled Cheese",
+    "title": dishNames[44],
     "slug": "grilled-cheese",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2248,7 +2249,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "46",
-    "title": "Cobb Salad",
+    "title": dishNames[45],
     "slug": "cobb-salad",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2299,7 +2300,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "47",
-    "title": "BLT Sandwich",
+    "title": dishNames[46],
     "slug": "blt-sandwich",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2352,7 +2353,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "48",
-    "title": "Tuna Salad",
+    "title": dishNames[47],
     "slug": "tuna-salad",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2395,7 +2396,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "49",
-    "title": "Caprese Sandwich",
+    "title": dishNames[48],
     "slug": "caprese-sandwich",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2446,7 +2447,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "50",
-    "title": "Greek Salad",
+    "title": dishNames[49],
     "slug": "greek-salad",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2492,7 +2493,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "51",
-    "title": "Quinoa Bowl",
+    "title": dishNames[50],
     "slug": "quinoa-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2540,7 +2541,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "52",
-    "title": "Pasta Salad",
+    "title": dishNames[51],
     "slug": "pasta-salad",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2588,7 +2589,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "53",
-    "title": "Chicken Noodle Soup",
+    "title": dishNames[52],
     "slug": "chicken-noodle-soup",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2631,7 +2632,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "54",
-    "title": "Turkey Sandwich",
+    "title": dishNames[53],
     "slug": "turkey-sandwich",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2676,7 +2677,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "55",
-    "title": "Veggie Wrap",
+    "title": dishNames[54],
     "slug": "veggie-wrap",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2726,7 +2727,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "56",
-    "title": "Asian Noodle Bowl",
+    "title": dishNames[55],
     "slug": "asian-noodle-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2773,7 +2774,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "57",
-    "title": "Minestrone Soup",
+    "title": dishNames[56],
     "slug": "minestrone-soup",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2822,7 +2823,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "58",
-    "title": "Buddha Bowl",
+    "title": dishNames[57],
     "slug": "buddha-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2867,7 +2868,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "59",
-    "title": "Panini",
+    "title": dishNames[58],
     "slug": "panini",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2911,7 +2912,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "60",
-    "title": "Soup and Salad Combo",
+    "title": dishNames[59],
     "slug": "soup-and-salad-combo",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -2959,7 +2960,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "61",
-    "title": "Rice Bowl",
+    "title": dishNames[60],
     "slug": "rice-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3003,7 +3004,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "62",
-    "title": "Pita Pocket",
+    "title": dishNames[61],
     "slug": "pita-pocket",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3052,7 +3053,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "63",
-    "title": "Nicoise Salad",
+    "title": dishNames[62],
     "slug": "nicoise-salad",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3101,7 +3102,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "64",
-    "title": "Pulled Pork Sandwich",
+    "title": dishNames[63],
     "slug": "pulled-pork-sandwich",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3146,7 +3147,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "65",
-    "title": "French Onion Soup",
+    "title": dishNames[64],
     "slug": "french-onion-soup",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3198,7 +3199,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "66",
-    "title": "Falafel Wrap",
+    "title": dishNames[65],
     "slug": "falafel-wrap",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3248,7 +3249,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "67",
-    "title": "Chicken Caesar Wrap",
+    "title": dishNames[66],
     "slug": "chicken-caesar-wrap",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3296,7 +3297,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "68",
-    "title": "Mediterranean Bowl",
+    "title": dishNames[67],
     "slug": "mediterranean-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3349,7 +3350,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "69",
-    "title": "Pho Bowl",
+    "title": dishNames[68],
     "slug": "pho-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3398,7 +3399,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "70",
-    "title": "Ramen Bowl",
+    "title": dishNames[69],
     "slug": "ramen-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3444,7 +3445,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "71",
-    "title": "Burrito Bowl",
+    "title": dishNames[70],
     "slug": "burrito-bowl",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3491,7 +3492,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "72",
-    "title": "Lobster Roll",
+    "title": dishNames[71],
     "slug": "lobster-roll",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3539,7 +3540,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "73",
-    "title": "Po Boy Sandwich",
+    "title": dishNames[72],
     "slug": "po-boy-sandwich",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3588,7 +3589,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "74",
-    "title": "Cuban Sandwich",
+    "title": dishNames[73],
     "slug": "cuban-sandwich",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3642,7 +3643,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "75",
-    "title": "Banh Mi",
+    "title": dishNames[74],
     "slug": "banh-mi",
     "category": "Lunch Ideas",
     "categorySlug": "lunch",
@@ -3692,7 +3693,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "76",
-    "title": "Spaghetti Carbonara",
+    "title": dishNames[75],
     "slug": "spaghetti-carbonara",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -3743,7 +3744,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "77",
-    "title": "Grilled Salmon",
+    "title": dishNames[76],
     "slug": "grilled-salmon",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -3789,7 +3790,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "78",
-    "title": "Beef Stroganoff",
+    "title": dishNames[77],
     "slug": "beef-stroganoff",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -3831,7 +3832,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "79",
-    "title": "Chicken Parmesan",
+    "title": dishNames[78],
     "slug": "chicken-parmesan",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -3879,7 +3880,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "80",
-    "title": "Lasagna",
+    "title": dishNames[79],
     "slug": "lasagna",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -3927,7 +3928,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "81",
-    "title": "Pork Chops",
+    "title": dishNames[80],
     "slug": "pork-chops",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -3973,7 +3974,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "82",
-    "title": "Beef Tacos",
+    "title": dishNames[81],
     "slug": "beef-tacos",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4020,7 +4021,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "83",
-    "title": "Chicken Stir Fry",
+    "title": dishNames[82],
     "slug": "chicken-stir-fry",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4070,7 +4071,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "84",
-    "title": "Meatloaf",
+    "title": dishNames[83],
     "slug": "meatloaf",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4119,7 +4120,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "85",
-    "title": "Roast Chicken",
+    "title": dishNames[84],
     "slug": "roast-chicken",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4172,7 +4173,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "86",
-    "title": "Fish and Chips",
+    "title": dishNames[85],
     "slug": "fish-and-chips",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4217,7 +4218,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "87",
-    "title": "Shepherd's Pie",
+    "title": dishNames[86],
     "slug": "shepherd-s-pie",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4263,7 +4264,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "88",
-    "title": "Beef Bourguignon",
+    "title": dishNames[87],
     "slug": "beef-bourguignon",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4312,7 +4313,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "89",
-    "title": "Chicken Curry",
+    "title": dishNames[88],
     "slug": "chicken-curry",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4357,7 +4358,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "90",
-    "title": "Paella",
+    "title": dishNames[89],
     "slug": "paella",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4407,7 +4408,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "91",
-    "title": "Risotto",
+    "title": dishNames[90],
     "slug": "risotto",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4460,7 +4461,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "92",
-    "title": "Pot Roast",
+    "title": dishNames[91],
     "slug": "pot-roast",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4511,7 +4512,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "93",
-    "title": "BBQ Ribs",
+    "title": dishNames[92],
     "slug": "bbq-ribs",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4561,7 +4562,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "94",
-    "title": "Stuffed Peppers",
+    "title": dishNames[93],
     "slug": "stuffed-peppers",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4613,7 +4614,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "95",
-    "title": "Chicken Alfredo",
+    "title": dishNames[94],
     "slug": "chicken-alfredo",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4664,7 +4665,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "96",
-    "title": "Beef Enchiladas",
+    "title": dishNames[95],
     "slug": "beef-enchiladas",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4715,7 +4716,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "97",
-    "title": "Shrimp Scampi",
+    "title": dishNames[96],
     "slug": "shrimp-scampi",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4768,7 +4769,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "98",
-    "title": "Teriyaki Chicken",
+    "title": dishNames[97],
     "slug": "teriyaki-chicken",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4821,7 +4822,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "99",
-    "title": "Pulled Pork",
+    "title": dishNames[98],
     "slug": "pulled-pork",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4868,7 +4869,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "100",
-    "title": "Lamb Chops",
+    "title": dishNames[99],
     "slug": "lamb-chops",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4912,7 +4913,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "101",
-    "title": "Duck Confit",
+    "title": dishNames[100],
     "slug": "duck-confit",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -4954,7 +4955,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "102",
-    "title": "Sea Bass",
+    "title": dishNames[101],
     "slug": "sea-bass",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5006,7 +5007,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "103",
-    "title": "Beef Wellington",
+    "title": dishNames[102],
     "slug": "beef-wellington",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5052,7 +5053,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "104",
-    "title": "Osso Buco",
+    "title": dishNames[103],
     "slug": "osso-buco",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5106,7 +5107,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "105",
-    "title": "Coq au Vin",
+    "title": dishNames[104],
     "slug": "coq-au-vin",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5156,7 +5157,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "106",
-    "title": "Jambalaya",
+    "title": dishNames[105],
     "slug": "jambalaya",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5204,7 +5205,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "107",
-    "title": "Chicken Tikka Masala",
+    "title": dishNames[106],
     "slug": "chicken-tikka-masala",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5256,7 +5257,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "108",
-    "title": "Pad Thai",
+    "title": dishNames[107],
     "slug": "pad-thai",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5305,7 +5306,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "109",
-    "title": "Beef Bulgogi",
+    "title": dishNames[108],
     "slug": "beef-bulgogi",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5360,7 +5361,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "110",
-    "title": "Moussaka",
+    "title": dishNames[109],
     "slug": "moussaka",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5413,7 +5414,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "111",
-    "title": "Chicken Marsala",
+    "title": dishNames[110],
     "slug": "chicken-marsala",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5457,7 +5458,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "112",
-    "title": "Pork Tenderloin",
+    "title": dishNames[111],
     "slug": "pork-tenderloin",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5506,7 +5507,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "113",
-    "title": "Cioppino",
+    "title": dishNames[112],
     "slug": "cioppino",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5556,7 +5557,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "114",
-    "title": "Chicken Cacciatore",
+    "title": dishNames[113],
     "slug": "chicken-cacciatore",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5606,7 +5607,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "115",
-    "title": "Beef Brisket",
+    "title": dishNames[114],
     "slug": "beef-brisket",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5655,7 +5656,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "116",
-    "title": "Salmon Teriyaki",
+    "title": dishNames[115],
     "slug": "salmon-teriyaki",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5706,7 +5707,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "117",
-    "title": "Pork Carnitas",
+    "title": dishNames[116],
     "slug": "pork-carnitas",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5753,7 +5754,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "118",
-    "title": "Chicken Piccata",
+    "title": dishNames[117],
     "slug": "chicken-piccata",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5802,7 +5803,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "119",
-    "title": "Meatballs",
+    "title": dishNames[118],
     "slug": "meatballs",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5849,7 +5850,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "120",
-    "title": "Roasted Turkey",
+    "title": dishNames[119],
     "slug": "roasted-turkey",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5899,7 +5900,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "121",
-    "title": "Beef Fajitas",
+    "title": dishNames[120],
     "slug": "beef-fajitas",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5944,7 +5945,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "122",
-    "title": "Shrimp Fried Rice",
+    "title": dishNames[121],
     "slug": "shrimp-fried-rice",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -5995,7 +5996,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "123",
-    "title": "Chicken Shawarma",
+    "title": dishNames[122],
     "slug": "chicken-shawarma",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6042,7 +6043,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "124",
-    "title": "Lamb Curry",
+    "title": dishNames[123],
     "slug": "lamb-curry",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6089,7 +6090,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "125",
-    "title": "Pork Schnitzel",
+    "title": dishNames[124],
     "slug": "pork-schnitzel",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6135,7 +6136,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "126",
-    "title": "Chicken Souvlaki",
+    "title": dishNames[125],
     "slug": "chicken-souvlaki",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6184,7 +6185,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "127",
-    "title": "Beef Kebabs",
+    "title": dishNames[126],
     "slug": "beef-kebabs",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6232,7 +6233,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "128",
-    "title": "Fish Tacos",
+    "title": dishNames[127],
     "slug": "fish-tacos",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6276,7 +6277,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "129",
-    "title": "Pork Ramen",
+    "title": dishNames[128],
     "slug": "pork-ramen",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6326,7 +6327,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "130",
-    "title": "Chicken Adobo",
+    "title": dishNames[129],
     "slug": "chicken-adobo",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6371,7 +6372,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "131",
-    "title": "Beef Rendang",
+    "title": dishNames[130],
     "slug": "beef-rendang",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6427,7 +6428,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "132",
-    "title": "Duck Breast",
+    "title": dishNames[131],
     "slug": "duck-breast",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6477,7 +6478,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "133",
-    "title": "Lobster Thermidor",
+    "title": dishNames[132],
     "slug": "lobster-thermidor",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6531,7 +6532,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "134",
-    "title": "Chicken Biryani",
+    "title": dishNames[133],
     "slug": "chicken-biryani",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6582,7 +6583,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "135",
-    "title": "Pork Belly",
+    "title": dishNames[134],
     "slug": "pork-belly",
     "category": "Dinner Recipes",
     "categorySlug": "dinner",
@@ -6630,7 +6631,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "136",
-    "title": "Bruschetta",
+    "title": dishNames[135],
     "slug": "bruschetta",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -6677,7 +6678,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "137",
-    "title": "Buffalo Wings",
+    "title": dishNames[136],
     "slug": "buffalo-wings",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -6728,7 +6729,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "138",
-    "title": "Spring Rolls",
+    "title": dishNames[137],
     "slug": "spring-rolls",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -6777,7 +6778,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "139",
-    "title": "Hummus",
+    "title": dishNames[138],
     "slug": "hummus",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -6823,7 +6824,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "140",
-    "title": "Guacamole",
+    "title": dishNames[139],
     "slug": "guacamole",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -6875,7 +6876,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "141",
-    "title": "Spinach Artichoke Dip",
+    "title": dishNames[140],
     "slug": "spinach-artichoke-dip",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -6926,7 +6927,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "142",
-    "title": "Deviled Eggs",
+    "title": dishNames[141],
     "slug": "deviled-eggs",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -6977,7 +6978,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "143",
-    "title": "Mozzarella Sticks",
+    "title": dishNames[142],
     "slug": "mozzarella-sticks",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7022,7 +7023,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "144",
-    "title": "Nachos",
+    "title": dishNames[143],
     "slug": "nachos",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7074,7 +7075,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "145",
-    "title": "Jalapeño Poppers",
+    "title": dishNames[144],
     "slug": "jalape-o-poppers",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7125,7 +7126,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "146",
-    "title": "Crab Cakes",
+    "title": dishNames[145],
     "slug": "crab-cakes",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7170,7 +7171,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "147",
-    "title": "Caprese Skewers",
+    "title": dishNames[146],
     "slug": "caprese-skewers",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7221,7 +7222,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "148",
-    "title": "Cheese Board",
+    "title": dishNames[147],
     "slug": "cheese-board",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7276,7 +7277,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "149",
-    "title": "Stuffed Mushrooms",
+    "title": dishNames[148],
     "slug": "stuffed-mushrooms",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7323,7 +7324,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "150",
-    "title": "Prosciutto Melon",
+    "title": dishNames[149],
     "slug": "prosciutto-melon",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7370,7 +7371,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "151",
-    "title": "Shrimp Cocktail",
+    "title": dishNames[150],
     "slug": "shrimp-cocktail",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7419,7 +7420,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "152",
-    "title": "Chicken Satay",
+    "title": dishNames[151],
     "slug": "chicken-satay",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7470,7 +7471,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "153",
-    "title": "Potato Skins",
+    "title": dishNames[152],
     "slug": "potato-skins",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7519,7 +7520,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "154",
-    "title": "Meatballs",
+    "title": dishNames[153],
     "slug": "meatballs-2",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7562,7 +7563,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "155",
-    "title": "Quesadilla",
+    "title": dishNames[154],
     "slug": "quesadilla",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7609,7 +7610,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "156",
-    "title": "Edamame",
+    "title": dishNames[155],
     "slug": "edamame",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7661,7 +7662,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "157",
-    "title": "Onion Rings",
+    "title": dishNames[156],
     "slug": "onion-rings",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7713,7 +7714,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "158",
-    "title": "Calamari",
+    "title": dishNames[157],
     "slug": "calamari",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7765,7 +7766,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "159",
-    "title": "Pigs in Blanket",
+    "title": dishNames[158],
     "slug": "pigs-in-blanket",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7817,7 +7818,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "160",
-    "title": "Chicken Tenders",
+    "title": dishNames[159],
     "slug": "chicken-tenders",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7871,7 +7872,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "161",
-    "title": "Samosas",
+    "title": dishNames[160],
     "slug": "samosas",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7922,7 +7923,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "162",
-    "title": "Empanadas",
+    "title": dishNames[161],
     "slug": "empanadas",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -7975,7 +7976,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "163",
-    "title": "Crostini",
+    "title": dishNames[162],
     "slug": "crostini",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -8024,7 +8025,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "164",
-    "title": "Cheese Fondue",
+    "title": dishNames[163],
     "slug": "cheese-fondue",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -8067,7 +8068,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "165",
-    "title": "Fried Pickles",
+    "title": dishNames[164],
     "slug": "fried-pickles",
     "category": "Appetizers & Snacks",
     "categorySlug": "appetizers-snacks",
@@ -8113,7 +8114,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "166",
-    "title": "Chocolate Cake",
+    "title": dishNames[165],
     "slug": "chocolate-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8163,7 +8164,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "167",
-    "title": "Cheesecake",
+    "title": dishNames[166],
     "slug": "cheesecake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8208,7 +8209,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "168",
-    "title": "Brownies",
+    "title": dishNames[167],
     "slug": "brownies",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8260,7 +8261,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "169",
-    "title": "Tiramisu",
+    "title": dishNames[168],
     "slug": "tiramisu",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8307,7 +8308,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "170",
-    "title": "Apple Pie",
+    "title": dishNames[169],
     "slug": "apple-pie",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8353,7 +8354,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "171",
-    "title": "Crème Brûlée",
+    "title": dishNames[170],
     "slug": "cr-me-br-l-e",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8400,7 +8401,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "172",
-    "title": "Ice Cream Sundae",
+    "title": dishNames[171],
     "slug": "ice-cream-sundae",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8447,7 +8448,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "173",
-    "title": "Cookies",
+    "title": dishNames[172],
     "slug": "cookies",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8494,7 +8495,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "174",
-    "title": "Cupcakes",
+    "title": dishNames[173],
     "slug": "cupcakes",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8543,7 +8544,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "175",
-    "title": "Panna Cotta",
+    "title": dishNames[174],
     "slug": "panna-cotta",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8594,7 +8595,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "176",
-    "title": "Chocolate Mousse",
+    "title": dishNames[175],
     "slug": "chocolate-mousse",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8637,7 +8638,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "177",
-    "title": "Lemon Bars",
+    "title": dishNames[176],
     "slug": "lemon-bars",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8689,7 +8690,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "178",
-    "title": "Red Velvet Cake",
+    "title": dishNames[177],
     "slug": "red-velvet-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8734,7 +8735,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "179",
-    "title": "Carrot Cake",
+    "title": dishNames[178],
     "slug": "carrot-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8786,7 +8787,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "180",
-    "title": "Banana Bread",
+    "title": dishNames[179],
     "slug": "banana-bread",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8835,7 +8836,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "181",
-    "title": "Fudge",
+    "title": dishNames[180],
     "slug": "fudge",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8884,7 +8885,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "182",
-    "title": "Macarons",
+    "title": dishNames[181],
     "slug": "macarons",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8933,7 +8934,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "183",
-    "title": "Eclairs",
+    "title": dishNames[182],
     "slug": "eclairs",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -8982,7 +8983,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "184",
-    "title": "Cannoli",
+    "title": dishNames[183],
     "slug": "cannoli",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9028,7 +9029,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "185",
-    "title": "Churros",
+    "title": dishNames[184],
     "slug": "churros",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9083,7 +9084,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "186",
-    "title": "Tres Leches Cake",
+    "title": dishNames[185],
     "slug": "tres-leches-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9133,7 +9134,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "187",
-    "title": "Flan",
+    "title": dishNames[186],
     "slug": "flan",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9181,7 +9182,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "188",
-    "title": "Key Lime Pie",
+    "title": dishNames[187],
     "slug": "key-lime-pie",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9236,7 +9237,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "189",
-    "title": "Pecan Pie",
+    "title": dishNames[188],
     "slug": "pecan-pie",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9290,7 +9291,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "190",
-    "title": "Blueberry Pie",
+    "title": dishNames[189],
     "slug": "blueberry-pie",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9336,7 +9337,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "191",
-    "title": "Chocolate Chip Cookies",
+    "title": dishNames[190],
     "slug": "chocolate-chip-cookies",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9385,7 +9386,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "192",
-    "title": "Snickerdoodles",
+    "title": dishNames[191],
     "slug": "snickerdoodles",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9432,7 +9433,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "193",
-    "title": "Peanut Butter Cookies",
+    "title": dishNames[192],
     "slug": "peanut-butter-cookies",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9476,7 +9477,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "194",
-    "title": "Oatmeal Cookies",
+    "title": dishNames[193],
     "slug": "oatmeal-cookies",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9521,7 +9522,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "195",
-    "title": "Sugar Cookies",
+    "title": dishNames[194],
     "slug": "sugar-cookies",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9570,7 +9571,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "196",
-    "title": "Chocolate Truffles",
+    "title": dishNames[195],
     "slug": "chocolate-truffles",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9615,7 +9616,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "197",
-    "title": "Rice Pudding",
+    "title": dishNames[196],
     "slug": "rice-pudding",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9666,7 +9667,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "198",
-    "title": "Bread Pudding",
+    "title": dishNames[197],
     "slug": "bread-pudding",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9717,7 +9718,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "199",
-    "title": "Fruit Tart",
+    "title": dishNames[198],
     "slug": "fruit-tart",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9767,7 +9768,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "200",
-    "title": "Lemon Tart",
+    "title": dishNames[199],
     "slug": "lemon-tart",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9813,7 +9814,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "201",
-    "title": "Chocolate Soufflé",
+    "title": dishNames[200],
     "slug": "chocolate-souffl",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9863,7 +9864,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "202",
-    "title": "Pavlova",
+    "title": dishNames[201],
     "slug": "pavlova",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9907,7 +9908,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "203",
-    "title": "Baked Alaska",
+    "title": dishNames[202],
     "slug": "baked-alaska",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9955,7 +9956,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "204",
-    "title": "Banoffee Pie",
+    "title": dishNames[203],
     "slug": "banoffee-pie",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -9998,7 +9999,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "205",
-    "title": "Mississippi Mud Pie",
+    "title": dishNames[204],
     "slug": "mississippi-mud-pie",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10043,7 +10044,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "206",
-    "title": "Black Forest Cake",
+    "title": dishNames[205],
     "slug": "black-forest-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10093,7 +10094,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "207",
-    "title": "Opera Cake",
+    "title": dishNames[206],
     "slug": "opera-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10141,7 +10142,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "208",
-    "title": "Molten Lava Cake",
+    "title": dishNames[207],
     "slug": "molten-lava-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10184,7 +10185,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "209",
-    "title": "Angel Food Cake",
+    "title": dishNames[208],
     "slug": "angel-food-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10230,7 +10231,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "210",
-    "title": "Pound Cake",
+    "title": dishNames[209],
     "slug": "pound-cake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10282,7 +10283,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "211",
-    "title": "Strawberry Shortcake",
+    "title": dishNames[210],
     "slug": "strawberry-shortcake",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10331,7 +10332,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "212",
-    "title": "Pumpkin Pie",
+    "title": dishNames[211],
     "slug": "pumpkin-pie",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10383,7 +10384,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "213",
-    "title": "Chocolate Fondue",
+    "title": dishNames[212],
     "slug": "chocolate-fondue",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10429,7 +10430,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "214",
-    "title": "Gelato",
+    "title": dishNames[213],
     "slug": "gelato",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10478,7 +10479,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "215",
-    "title": "Sorbet",
+    "title": dishNames[214],
     "slug": "sorbet",
     "category": "Desserts & Sweets",
     "categorySlug": "desserts",
@@ -10524,7 +10525,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "216",
-    "title": "Sourdough Bread",
+    "title": dishNames[215],
     "slug": "sourdough-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10575,7 +10576,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "217",
-    "title": "Baguette",
+    "title": dishNames[216],
     "slug": "baguette",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10622,7 +10623,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "218",
-    "title": "Focaccia",
+    "title": dishNames[217],
     "slug": "focaccia",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10666,7 +10667,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "219",
-    "title": "Croissants",
+    "title": dishNames[218],
     "slug": "croissants",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10713,7 +10714,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "220",
-    "title": "Brioche",
+    "title": dishNames[219],
     "slug": "brioche",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10761,7 +10762,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "221",
-    "title": "Ciabatta",
+    "title": dishNames[220],
     "slug": "ciabatta",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10812,7 +10813,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "222",
-    "title": "Challah",
+    "title": dishNames[221],
     "slug": "challah",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10857,7 +10858,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "223",
-    "title": "Pita Bread",
+    "title": dishNames[222],
     "slug": "pita-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10908,7 +10909,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "224",
-    "title": "Naan",
+    "title": dishNames[223],
     "slug": "naan",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -10959,7 +10960,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "225",
-    "title": "Dinner Rolls",
+    "title": dishNames[224],
     "slug": "dinner-rolls",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11010,7 +11011,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "226",
-    "title": "Bagels",
+    "title": dishNames[225],
     "slug": "bagels",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11060,7 +11061,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "227",
-    "title": "English Muffins",
+    "title": dishNames[226],
     "slug": "english-muffins",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11108,7 +11109,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "228",
-    "title": "Pretzel",
+    "title": dishNames[227],
     "slug": "pretzel",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11155,7 +11156,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "229",
-    "title": "Cornbread",
+    "title": dishNames[228],
     "slug": "cornbread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11204,7 +11205,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "230",
-    "title": "Irish Soda Bread",
+    "title": dishNames[229],
     "slug": "irish-soda-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11256,7 +11257,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "231",
-    "title": "Rye Bread",
+    "title": dishNames[230],
     "slug": "rye-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11306,7 +11307,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "232",
-    "title": "Whole Wheat Bread",
+    "title": dishNames[231],
     "slug": "whole-wheat-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11354,7 +11355,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "233",
-    "title": "Garlic Bread",
+    "title": dishNames[232],
     "slug": "garlic-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11400,7 +11401,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "234",
-    "title": "Pizza Dough",
+    "title": dishNames[233],
     "slug": "pizza-dough",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11444,7 +11445,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "235",
-    "title": "Flatbread",
+    "title": dishNames[234],
     "slug": "flatbread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11499,7 +11500,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "236",
-    "title": "Pumpernickel",
+    "title": dishNames[235],
     "slug": "pumpernickel",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11548,7 +11549,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "237",
-    "title": "Multi-Grain Bread",
+    "title": dishNames[236],
     "slug": "multi-grain-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11598,7 +11599,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "238",
-    "title": "Sandwich Bread",
+    "title": dishNames[237],
     "slug": "sandwich-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11645,7 +11646,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "239",
-    "title": "Monkey Bread",
+    "title": dishNames[238],
     "slug": "monkey-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11700,7 +11701,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "240",
-    "title": "Pull-Apart Bread",
+    "title": dishNames[239],
     "slug": "pull-apart-bread",
     "category": "Baking & Breads",
     "categorySlug": "baking-breads",
@@ -11746,7 +11747,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "241",
-    "title": "Vegetable Stir Fry",
+    "title": dishNames[240],
     "slug": "vegetable-stir-fry",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -11796,7 +11797,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "242",
-    "title": "Lentil Soup",
+    "title": dishNames[241],
     "slug": "lentil-soup",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -11845,7 +11846,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "243",
-    "title": "Veggie Burger",
+    "title": dishNames[242],
     "slug": "veggie-burger",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -11895,7 +11896,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "244",
-    "title": "Tofu Scramble",
+    "title": dishNames[243],
     "slug": "tofu-scramble",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -11946,7 +11947,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "245",
-    "title": "Chickpea Curry",
+    "title": dishNames[244],
     "slug": "chickpea-curry",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12001,7 +12002,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "246",
-    "title": "Vegetable Lasagna",
+    "title": dishNames[245],
     "slug": "vegetable-lasagna",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12050,7 +12051,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "247",
-    "title": "Falafel",
+    "title": dishNames[246],
     "slug": "falafel",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12102,7 +12103,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "248",
-    "title": "Veggie Tacos",
+    "title": dishNames[247],
     "slug": "veggie-tacos",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12152,7 +12153,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "249",
-    "title": "Mushroom Risotto",
+    "title": dishNames[248],
     "slug": "mushroom-risotto",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12203,7 +12204,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "250",
-    "title": "Ratatouille",
+    "title": dishNames[249],
     "slug": "ratatouille",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12254,7 +12255,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "251",
-    "title": "Eggplant Parmesan",
+    "title": dishNames[250],
     "slug": "eggplant-parmesan",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12310,7 +12311,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "252",
-    "title": "Vegetable Pad Thai",
+    "title": dishNames[251],
     "slug": "vegetable-pad-thai",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12365,7 +12366,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "253",
-    "title": "Black Bean Burrito",
+    "title": dishNames[252],
     "slug": "black-bean-burrito",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12412,7 +12413,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "254",
-    "title": "Cauliflower Steak",
+    "title": dishNames[253],
     "slug": "cauliflower-steak",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12460,7 +12461,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "255",
-    "title": "Portobello Burger",
+    "title": dishNames[254],
     "slug": "portobello-burger",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12512,7 +12513,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "256",
-    "title": "Stuffed Zucchini",
+    "title": dishNames[255],
     "slug": "stuffed-zucchini",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12565,7 +12566,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "257",
-    "title": "Veggie Sushi Roll",
+    "title": dishNames[256],
     "slug": "veggie-sushi-roll",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12613,7 +12614,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "258",
-    "title": "Vegetable Biryani",
+    "title": dishNames[257],
     "slug": "vegetable-biryani",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12657,7 +12658,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "259",
-    "title": "Tempeh Bowl",
+    "title": dishNames[258],
     "slug": "tempeh-bowl",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12705,7 +12706,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "260",
-    "title": "Jackfruit Tacos",
+    "title": dishNames[259],
     "slug": "jackfruit-tacos",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12761,7 +12762,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "261",
-    "title": "Vegan Pizza",
+    "title": dishNames[260],
     "slug": "vegan-pizza",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12817,7 +12818,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "262",
-    "title": "Lentil Bolognese",
+    "title": dishNames[261],
     "slug": "lentil-bolognese",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12870,7 +12871,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "263",
-    "title": "Quinoa Stuffed Peppers",
+    "title": dishNames[262],
     "slug": "quinoa-stuffed-peppers",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12916,7 +12917,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "264",
-    "title": "Vegetable Korma",
+    "title": dishNames[263],
     "slug": "vegetable-korma",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -12967,7 +12968,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "265",
-    "title": "Tofu Stir Fry",
+    "title": dishNames[264],
     "slug": "tofu-stir-fry",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -13014,7 +13015,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "266",
-    "title": "Vegan Mac and Cheese",
+    "title": dishNames[265],
     "slug": "vegan-mac-and-cheese",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -13066,7 +13067,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "267",
-    "title": "Cauliflower Wings",
+    "title": dishNames[266],
     "slug": "cauliflower-wings",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -13121,7 +13122,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "268",
-    "title": "Vegetable Spring Rolls",
+    "title": dishNames[267],
     "slug": "vegetable-spring-rolls",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -13169,7 +13170,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "269",
-    "title": "Bean Chili",
+    "title": dishNames[268],
     "slug": "bean-chili",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -13218,7 +13219,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "270",
-    "title": "Veggie Kebabs",
+    "title": dishNames[269],
     "slug": "veggie-kebabs",
     "category": "Vegetarian & Vegan",
     "categorySlug": "vegetarian-vegan",
@@ -13271,7 +13272,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "271",
-    "title": "Garlic Shrimp Pasta",
+    "title": dishNames[270],
     "slug": "garlic-shrimp-pasta",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13327,7 +13328,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "272",
-    "title": "Chicken Quesadilla",
+    "title": dishNames[271],
     "slug": "chicken-quesadilla",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13372,7 +13373,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "273",
-    "title": "15-Minute Fried Rice",
+    "title": dishNames[272],
     "slug": "15-minute-fried-rice",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13425,7 +13426,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "274",
-    "title": "Quick Chicken Teriyaki",
+    "title": dishNames[273],
     "slug": "quick-chicken-teriyaki",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13475,7 +13476,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "275",
-    "title": "Easy Beef Tacos",
+    "title": dishNames[274],
     "slug": "easy-beef-tacos",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13531,7 +13532,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "276",
-    "title": "Simple Pasta Aglio e Olio",
+    "title": dishNames[275],
     "slug": "simple-pasta-aglio-e-olio",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13577,7 +13578,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "277",
-    "title": "Pan-Seared Salmon",
+    "title": dishNames[276],
     "slug": "pan-seared-salmon",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13623,7 +13624,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "278",
-    "title": "Quick Chicken Fajitas",
+    "title": dishNames[277],
     "slug": "quick-chicken-fajitas",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13672,7 +13673,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "279",
-    "title": "Easy Stir Fry",
+    "title": dishNames[278],
     "slug": "easy-stir-fry",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13720,7 +13721,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "280",
-    "title": "Instant Noodles Upgrade",
+    "title": dishNames[279],
     "slug": "instant-noodles-upgrade",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13773,7 +13774,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "281",
-    "title": "Quick Omelet",
+    "title": dishNames[280],
     "slug": "quick-omelet",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13820,7 +13821,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "282",
-    "title": "Fast Fried Egg Sandwich",
+    "title": dishNames[281],
     "slug": "fast-fried-egg-sandwich",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13875,7 +13876,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "283",
-    "title": "Microwave Mug Cake",
+    "title": dishNames[282],
     "slug": "microwave-mug-cake",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13926,7 +13927,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "284",
-    "title": "10-Minute Pizza",
+    "title": dishNames[283],
     "slug": "10-minute-pizza",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -13973,7 +13974,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "285",
-    "title": "Quick Quesadilla",
+    "title": dishNames[284],
     "slug": "quick-quesadilla",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14024,7 +14025,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "286",
-    "title": "Speed Chicken Parmesan",
+    "title": dishNames[285],
     "slug": "speed-chicken-parmesan",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14074,7 +14075,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "287",
-    "title": "Rapid Rice Bowl",
+    "title": dishNames[286],
     "slug": "rapid-rice-bowl",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14124,7 +14125,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "288",
-    "title": "Express Pasta Primavera",
+    "title": dishNames[287],
     "slug": "express-pasta-primavera",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14174,7 +14175,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "289",
-    "title": "Swift Shrimp Tacos",
+    "title": dishNames[288],
     "slug": "swift-shrimp-tacos",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14222,7 +14223,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "290",
-    "title": "Fast Fish Tacos",
+    "title": dishNames[289],
     "slug": "fast-fish-tacos",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14273,7 +14274,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "291",
-    "title": "Quick Grilled Cheese Deluxe",
+    "title": dishNames[290],
     "slug": "quick-grilled-cheese-deluxe",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14327,7 +14328,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "292",
-    "title": "Speedy Spaghetti",
+    "title": dishNames[291],
     "slug": "speedy-spaghetti",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14373,7 +14374,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "293",
-    "title": "Rapid Ramen",
+    "title": dishNames[292],
     "slug": "rapid-ramen",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14423,7 +14424,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "294",
-    "title": "Express Egg Fried Rice",
+    "title": dishNames[293],
     "slug": "express-egg-fried-rice",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14476,7 +14477,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "295",
-    "title": "Quick Chicken Wrap",
+    "title": dishNames[294],
     "slug": "quick-chicken-wrap",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14531,7 +14532,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "296",
-    "title": "Fast Thai Basil Chicken",
+    "title": dishNames[295],
     "slug": "fast-thai-basil-chicken",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14580,7 +14581,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "297",
-    "title": "Quick Pesto Pasta",
+    "title": dishNames[296],
     "slug": "quick-pesto-pasta",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14633,7 +14634,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "298",
-    "title": "Easy Chicken Salad",
+    "title": dishNames[297],
     "slug": "easy-chicken-salad",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14682,7 +14683,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "299",
-    "title": "Quick Tuna Melt",
+    "title": dishNames[298],
     "slug": "quick-tuna-melt",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14726,7 +14727,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "300",
-    "title": "Fast Breakfast Burrito",
+    "title": dishNames[299],
     "slug": "fast-breakfast-burrito",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14777,7 +14778,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "301",
-    "title": "Quick Caprese Sandwich",
+    "title": dishNames[300],
     "slug": "quick-caprese-sandwich",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14827,7 +14828,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "302",
-    "title": "Easy Greek Salad",
+    "title": dishNames[301],
     "slug": "easy-greek-salad",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14873,7 +14874,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "303",
-    "title": "Quick Smoothie Bowl",
+    "title": dishNames[302],
     "slug": "quick-smoothie-bowl",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14919,7 +14920,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "304",
-    "title": "Fast Avocado Toast",
+    "title": dishNames[303],
     "slug": "fast-avocado-toast",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -14971,7 +14972,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "305",
-    "title": "Quick Chicken Sandwich",
+    "title": dishNames[304],
     "slug": "quick-chicken-sandwich",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -15020,7 +15021,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "306",
-    "title": "Easy Veggie Wrap",
+    "title": dishNames[305],
     "slug": "easy-veggie-wrap",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -15068,7 +15069,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "307",
-    "title": "Quick Protein Bowl",
+    "title": dishNames[306],
     "slug": "quick-protein-bowl",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -15118,7 +15119,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "308",
-    "title": "Fast Noodle Soup",
+    "title": dishNames[307],
     "slug": "fast-noodle-soup",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -15171,7 +15172,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "309",
-    "title": "Quick Cheese Pizza",
+    "title": dishNames[308],
     "slug": "quick-cheese-pizza",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -15221,7 +15222,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "310",
-    "title": "Easy Flatbread Pizza",
+    "title": dishNames[309],
     "slug": "easy-flatbread-pizza",
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
@@ -15273,7 +15274,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "311",
-    "title": "Grilled Chicken Salad",
+    "title": dishNames[310],
     "slug": "grilled-chicken-salad",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15322,7 +15323,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "312",
-    "title": "Quinoa Power Bowl",
+    "title": dishNames[311],
     "slug": "quinoa-power-bowl",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15374,7 +15375,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "313",
-    "title": "Baked Salmon with Vegetables",
+    "title": dishNames[312],
     "slug": "baked-salmon-with-vegetables",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15426,7 +15427,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "314",
-    "title": "Turkey Lettuce Wraps",
+    "title": dishNames[313],
     "slug": "turkey-lettuce-wraps",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15483,7 +15484,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "315",
-    "title": "Greek Yogurt Parfait",
+    "title": dishNames[314],
     "slug": "greek-yogurt-parfait",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15532,7 +15533,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "316",
-    "title": "Kale Caesar Salad",
+    "title": dishNames[315],
     "slug": "kale-caesar-salad",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15580,7 +15581,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "317",
-    "title": "Zucchini Noodles",
+    "title": dishNames[316],
     "slug": "zucchini-noodles",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15625,7 +15626,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "318",
-    "title": "Cauliflower Rice Bowl",
+    "title": dishNames[317],
     "slug": "cauliflower-rice-bowl",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15678,7 +15679,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "319",
-    "title": "Protein Smoothie",
+    "title": dishNames[318],
     "slug": "protein-smoothie",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15730,7 +15731,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "320",
-    "title": "Green Smoothie Bowl",
+    "title": dishNames[319],
     "slug": "green-smoothie-bowl",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15781,7 +15782,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "321",
-    "title": "Grilled Chicken Breast",
+    "title": dishNames[320],
     "slug": "grilled-chicken-breast",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15832,7 +15833,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "322",
-    "title": "Steamed Fish with Broccoli",
+    "title": dishNames[321],
     "slug": "steamed-fish-with-broccoli",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15882,7 +15883,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "323",
-    "title": "Egg White Omelet",
+    "title": dishNames[322],
     "slug": "egg-white-omelet",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15935,7 +15936,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "324",
-    "title": "Turkey Burger",
+    "title": dishNames[323],
     "slug": "turkey-burger",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -15988,7 +15989,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "325",
-    "title": "Tuna Poke Bowl",
+    "title": dishNames[324],
     "slug": "tuna-poke-bowl",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16044,7 +16045,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "326",
-    "title": "Low-Carb Chicken Wings",
+    "title": dishNames[325],
     "slug": "low-carb-chicken-wings",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16091,7 +16092,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "327",
-    "title": "Spiralized Vegetable Pasta",
+    "title": dishNames[326],
     "slug": "spiralized-vegetable-pasta",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16143,7 +16144,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "328",
-    "title": "Lettuce Wrap Tacos",
+    "title": dishNames[327],
     "slug": "lettuce-wrap-tacos",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16192,7 +16193,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "329",
-    "title": "Protein Pancakes",
+    "title": dishNames[328],
     "slug": "protein-pancakes-2",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16242,7 +16243,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "330",
-    "title": "Chia Seed Pudding",
+    "title": dishNames[329],
     "slug": "chia-seed-pudding",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16298,7 +16299,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "331",
-    "title": "Grilled Vegetable Platter",
+    "title": dishNames[330],
     "slug": "grilled-vegetable-platter",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16349,7 +16350,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "332",
-    "title": "Baked Cod",
+    "title": dishNames[331],
     "slug": "baked-cod",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16399,7 +16400,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "333",
-    "title": "Turkey Meatballs",
+    "title": dishNames[332],
     "slug": "turkey-meatballs",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16448,7 +16449,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "334",
-    "title": "Shrimp Lettuce Cups",
+    "title": dishNames[333],
     "slug": "shrimp-lettuce-cups",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16497,7 +16498,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "335",
-    "title": "Chicken Zoodle Soup",
+    "title": dishNames[334],
     "slug": "chicken-zoodle-soup",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16544,7 +16545,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "336",
-    "title": "Almond-Crusted Chicken",
+    "title": dishNames[335],
     "slug": "almond-crusted-chicken",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16594,7 +16595,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "337",
-    "title": "Baked Chicken Tenders",
+    "title": dishNames[336],
     "slug": "baked-chicken-tenders",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16650,7 +16651,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "338",
-    "title": "Vegetable Soup",
+    "title": dishNames[337],
     "slug": "vegetable-soup",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16699,7 +16700,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "339",
-    "title": "Lean Beef Stir Fry",
+    "title": dishNames[338],
     "slug": "lean-beef-stir-fry",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16746,7 +16747,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "340",
-    "title": "Low-Fat Greek Bowl",
+    "title": dishNames[339],
     "slug": "low-fat-greek-bowl",
     "category": "Healthy & Diet",
     "categorySlug": "healthy-diet",
@@ -16793,7 +16794,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "341",
-    "title": "Authentic Pad Thai",
+    "title": dishNames[340],
     "slug": "authentic-pad-thai",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -16839,7 +16840,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "342",
-    "title": "Classic Paella",
+    "title": dishNames[341],
     "slug": "classic-paella",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -16891,7 +16892,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "343",
-    "title": "Traditional Biryani",
+    "title": dishNames[342],
     "slug": "traditional-biryani",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -16937,7 +16938,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "344",
-    "title": "French Cassoulet",
+    "title": dishNames[343],
     "slug": "french-cassoulet",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -16985,7 +16986,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "345",
-    "title": "Italian Osso Buco",
+    "title": dishNames[344],
     "slug": "italian-osso-buco",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17036,7 +17037,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "346",
-    "title": "Japanese Ramen",
+    "title": dishNames[345],
     "slug": "japanese-ramen",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17084,7 +17085,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "347",
-    "title": "Korean Bibimbap",
+    "title": dishNames[346],
     "slug": "korean-bibimbap",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17134,7 +17135,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "348",
-    "title": "Vietnamese Pho",
+    "title": dishNames[347],
     "slug": "vietnamese-pho",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17186,7 +17187,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "349",
-    "title": "Thai Green Curry",
+    "title": dishNames[348],
     "slug": "thai-green-curry",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17238,7 +17239,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "350",
-    "title": "Indian Butter Chicken",
+    "title": dishNames[349],
     "slug": "indian-butter-chicken",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17285,7 +17286,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "351",
-    "title": "Greek Moussaka",
+    "title": dishNames[350],
     "slug": "greek-moussaka",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17333,7 +17334,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "352",
-    "title": "Spanish Tapas",
+    "title": dishNames[351],
     "slug": "spanish-tapas",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17382,7 +17383,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "353",
-    "title": "Mexican Mole",
+    "title": dishNames[352],
     "slug": "mexican-mole",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17432,7 +17433,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "354",
-    "title": "Lebanese Shawarma",
+    "title": dishNames[353],
     "slug": "lebanese-shawarma",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17479,7 +17480,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "355",
-    "title": "Moroccan Tagine",
+    "title": dishNames[354],
     "slug": "moroccan-tagine",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17530,7 +17531,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "356",
-    "title": "Chinese Kung Pao Chicken",
+    "title": dishNames[355],
     "slug": "chinese-kung-pao-chicken",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17577,7 +17578,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "357",
-    "title": "Japanese Tempura",
+    "title": dishNames[356],
     "slug": "japanese-tempura",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17625,7 +17626,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "358",
-    "title": "Turkish Kebab",
+    "title": dishNames[357],
     "slug": "turkish-kebab",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17671,7 +17672,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "359",
-    "title": "Brazilian Feijoada",
+    "title": dishNames[358],
     "slug": "brazilian-feijoada",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17715,7 +17716,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "360",
-    "title": "Peruvian Ceviche",
+    "title": dishNames[359],
     "slug": "peruvian-ceviche",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17762,7 +17763,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "361",
-    "title": "Argentine Empanadas",
+    "title": dishNames[360],
     "slug": "argentine-empanadas",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17809,7 +17810,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "362",
-    "title": "German Schnitzel",
+    "title": dishNames[361],
     "slug": "german-schnitzel",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17858,7 +17859,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "363",
-    "title": "Russian Beef Stroganoff",
+    "title": dishNames[362],
     "slug": "russian-beef-stroganoff",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17905,7 +17906,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "364",
-    "title": "Polish Pierogi",
+    "title": dishNames[363],
     "slug": "polish-pierogi",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17952,7 +17953,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "365",
-    "title": "Hungarian Goulash",
+    "title": dishNames[364],
     "slug": "hungarian-goulash",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -17995,7 +17996,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "366",
-    "title": "Ethiopian Wat",
+    "title": dishNames[365],
     "slug": "ethiopian-wat",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18040,7 +18041,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "367",
-    "title": "Malaysian Rendang",
+    "title": dishNames[366],
     "slug": "malaysian-rendang",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18088,7 +18089,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "368",
-    "title": "Indonesian Satay",
+    "title": dishNames[367],
     "slug": "indonesian-satay",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18140,7 +18141,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "369",
-    "title": "Filipino Adobo",
+    "title": dishNames[368],
     "slug": "filipino-adobo",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18189,7 +18190,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "370",
-    "title": "Caribbean Jerk Chicken",
+    "title": dishNames[369],
     "slug": "caribbean-jerk-chicken",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18233,7 +18234,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "371",
-    "title": "Jamaican Curry Goat",
+    "title": dishNames[370],
     "slug": "jamaican-curry-goat",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18280,7 +18281,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "372",
-    "title": "Cuban Ropa Vieja",
+    "title": dishNames[371],
     "slug": "cuban-ropa-vieja",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18331,7 +18332,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "373",
-    "title": "Portuguese Bacalhau",
+    "title": dishNames[372],
     "slug": "portuguese-bacalhau",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18380,7 +18381,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "374",
-    "title": "Swedish Meatballs",
+    "title": dishNames[373],
     "slug": "swedish-meatballs",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18428,7 +18429,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "375",
-    "title": "Danish Smørrebrød",
+    "title": dishNames[374],
     "slug": "danish-sm-rrebr-d",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18476,7 +18477,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "376",
-    "title": "Austrian Sachertorte",
+    "title": dishNames[375],
     "slug": "austrian-sachertorte",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18524,7 +18525,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "377",
-    "title": "Belgian Carbonnade",
+    "title": dishNames[376],
     "slug": "belgian-carbonnade",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18572,7 +18573,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "378",
-    "title": "Dutch Stamppot",
+    "title": dishNames[377],
     "slug": "dutch-stamppot",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18622,7 +18623,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "379",
-    "title": "Swiss Fondue",
+    "title": dishNames[378],
     "slug": "swiss-fondue",
     "category": "International Cuisine",
     "categorySlug": "international",
@@ -18671,7 +18672,7 @@ export const allRecipes: Recipe[] = [
   },
   {
     "id": "380",
-    "title": "Norwegian Gravlax",
+    "title": dishNames[379],
     "slug": "norwegian-gravlax",
     "category": "International Cuisine",
     "categorySlug": "international",
