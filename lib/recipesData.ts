@@ -13931,7 +13931,7 @@ export const allRecipes: Recipe[] = [
     "category": "Quick & Easy",
     "categorySlug": "quick-easy",
     "description": "Delicious 10-minute pizza that's perfect for any occasion. This recipe combines amazing flavors with simple techniques. A family favorite that everyone will love!",
-    "image": "/images/recipes/10-minute-pizza.svg",
+    "image": "/images/recipes/10-minute-pizza.png",
     "prepTime": 6,
     "cookTime": 9,
     "totalTime": 15,
