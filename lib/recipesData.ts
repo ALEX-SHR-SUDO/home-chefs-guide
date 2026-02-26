@@ -8,7 +8,7 @@ export const allRecipes: Recipe[] = [
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
     "description": "Delicious fluffy pancakes that's perfect for any occasion. This recipe combines amazing flavors with simple techniques. A family favorite that everyone will love!",
-    "image": "/images/recipes/fluffy-pancakes.svg",
+    "image": "/images/recipes/Fluffy Pancakes.png",
     "prepTime": 13,
     "cookTime": 22,
     "totalTime": 35,
