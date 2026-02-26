@@ -1,6 +1,5 @@
 import { Recipe } from './types';
 import { allRecipes } from './recipesData';
-import { loadRecipeOverrides, getRecipeImageUrl } from './recipeOverrides';
 
 // Recipe generation utilities
 export function generateRecipeId(title: string): string {
@@ -90,45 +89,4 @@ export function getRecipe(categorySlug: string, recipeSlug: string): Recipe | un
 
 export function getAllRecipes(): Recipe[] {
   return sampleRecipes;
-}
-
-/**
- * Get all recipes with image overrides applied
- * This is async and should be used in API routes or server components
- */
-export async function getAllRecipesWithOverrides(): Promise<Recipe[]> {
-  const overrides = await loadRecipeOverrides();
-  return sampleRecipes.map(recipe => ({
-    ...recipe,
-    image: getRecipeImageUrl(recipe.id, recipe.image, overrides),
-  }));
-}
-
-/**
- * Get a recipe with image overrides applied
- * This is async and should be used in API routes or server components
- */
-export async function getRecipeWithOverrides(categorySlug: string, recipeSlug: string): Promise<Recipe | undefined> {
-  const recipe = getRecipe(categorySlug, recipeSlug);
-  if (!recipe) return undefined;
-
-  const overrides = await loadRecipeOverrides();
-  return {
-    ...recipe,
-    image: getRecipeImageUrl(recipe.id, recipe.image, overrides),
-  };
-}
-
-/**
- * Get recipes for a category with image overrides applied
- * This is async and should be used in API routes or server components
- */
-export async function getRecipesByCategoryWithOverrides(categorySlug: string): Promise<Recipe[]> {
-  const overrides = await loadRecipeOverrides();
-  return sampleRecipes
-    .filter(recipe => recipe.categorySlug === categorySlug)
-    .map(recipe => ({
-      ...recipe,
-      image: getRecipeImageUrl(recipe.id, recipe.image, overrides),
-    }));
 }

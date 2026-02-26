@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import RecipeCard from '@/components/RecipeCard';
-import { getAllRecipesWithOverrides, categories } from '@/lib/recipes';
+import { getAllRecipes, categories } from '@/lib/recipes';
 
-export default async function Home() {
-  const allRecipes = await getAllRecipesWithOverrides();
+export default function Home() {
+  const allRecipes = getAllRecipes();
   const featuredRecipes = allRecipes.slice(0, 12); // First 12 recipes as featured
 
   return (

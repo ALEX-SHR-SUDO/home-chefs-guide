@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getRecipeWithOverrides, getAllRecipes, getRecipesByCategoryWithOverrides } from '@/lib/recipes';
+import { getRecipe, getAllRecipes, getRecipesByCategory } from '@/lib/recipes';
 import RecipeImage from '@/components/RecipeImage';
 import PrintButton from '@/components/PrintButton';
 import ShareButtons from '@/components/ShareButtons';
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category, slug } = await params;
-  const recipe = await getRecipeWithOverrides(category, slug);
+  const recipe = getRecipe(category, slug);
   
   if (!recipe) {
     return {
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function RecipePage({ params }: PageProps) {
   const { category, slug } = await params;
-  const recipe = await getRecipeWithOverrides(category, slug);
+  const recipe = getRecipe(category, slug);
 
   if (!recipe) {
     return (
@@ -59,7 +59,7 @@ export default async function RecipePage({ params }: PageProps) {
     );
   }
 
-  const relatedRecipes = (await getRecipesByCategoryWithOverrides(category))
+  const relatedRecipes = getRecipesByCategory(category)
     .filter(r => r.id !== recipe.id)
     .slice(0, 3);
 
