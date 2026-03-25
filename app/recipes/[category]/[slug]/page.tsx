@@ -63,7 +63,7 @@ export default async function RecipePage({ params }: PageProps) {
     .filter(r => r.id !== recipe.id)
     .slice(0, 3);
 
-  const recipeUrl = `https://homechef-recipes.com/recipes/${category}/${slug}`;
+  const recipeUrl = `https://home-chefs-guide.vercel.app/recipes/${category}/${slug}`;
 
   // Recipe JSON-LD Schema
   const recipeSchema = {

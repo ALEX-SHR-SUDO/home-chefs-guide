@@ -4,7 +4,7 @@ import { getAllRecipes, categories } from '@/lib/recipes';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://homechef-recipes.com';
+  const baseUrl = 'https://home-chefs-guide.vercel.app';
   
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

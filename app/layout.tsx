@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://homechef-recipes.com'),
+  metadataBase: new URL('https://home-chefs-guide.vercel.app'),
   title: {
     default: 'HomeChef - Delicious Recipes for Every Occasion',
     template: '%s | HomeChef'
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://homechef-recipes.com',
+    url: 'https://home-chefs-guide.vercel.app',
     siteName: 'HomeChef',
     title: 'HomeChef - Delicious Recipes for Every Occasion',
     description: 'Discover 380+ delicious recipes for every meal and occasion.',
