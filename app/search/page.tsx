@@ -1,0 +1,149 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import RecipeCard from '@/components/RecipeCard';
+import { getAllRecipes, categories } from '@/lib/recipes';
+
+interface PageProps {
+  searchParams: Promise<{ q?: string }>;
+}
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const { q } = await searchParams;
+  const query = q?.trim() ?? '';
+
+  return {
+    title: query
+      ? `Search results for "${query}" | HomeChef`
+      : 'Search | HomeChef',
+    description: query
+      ? `Find recipes matching "${query}" on HomeChef.`
+      : 'Search for recipes on HomeChef.',
+  };
+}
+
+export default async function SearchPage({ searchParams }: PageProps) {
+  const { q } = await searchParams;
+  const query = q?.trim() ?? '';
+
+  const allRecipes = getAllRecipes();
+
+  const lower = query.toLowerCase();
+  const results = query
+    ? allRecipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(lower) ||
+        recipe.description.toLowerCase().includes(lower) ||
+        recipe.category.toLowerCase().includes(lower) ||
+        recipe.cuisine.toLowerCase().includes(lower) ||
+        recipe.dietaryTags.some((tag) => tag.toLowerCase().includes(lower))
+      )
+    : [];
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Search Header */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="container-custom py-12">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl font-display font-bold mb-4">
+              Search Recipes
+            </h1>
+            {query ? (
+              <p className="text-gray-500">
+                {results.length}{' '}
+                {results.length === 1 ? 'recipe' : 'recipes'} found for{' '}
+                <span className="text-primary-600 font-medium">&ldquo;{query}&rdquo;</span>
+              </p>
+            ) : (
+              <p className="text-xl text-gray-600">
+                Enter a search term in the box above to find recipes.
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Ad Space */}
+      <div className="container-custom my-8">
+        <div className="ad-space-content">
+          AdSense: Content Ad 336x280 / 300x250
+        </div>
+      </div>
+
+      {/* Results Grid with Sidebar */}
+      <div className="container-custom py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-3">
+            {!query && (
+              <div className="text-center py-12">
+                <p className="text-gray-600 text-lg">
+                  Use the search bar at the top of the page to find recipes.
+                </p>
+              </div>
+            )}
+
+            {query && results.length === 0 && (
+              <div className="text-center py-12">
+                <h2 className="text-2xl font-display font-semibold mb-3">
+                  No recipes found
+                </h2>
+                <p className="text-gray-600 text-lg mb-6">
+                  We couldn&apos;t find any recipes matching{' '}
+                  <span className="text-primary-600 font-medium">&ldquo;{query}&rdquo;</span>.
+                  Try different keywords or browse a category below.
+                </p>
+                <Link href={`/recipes/${categories[0].slug}`} className="btn-primary inline-block">
+                  Browse Recipes
+                </Link>
+              </div>
+            )}
+
+            {results.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {results.map((recipe) => (
+                  <RecipeCard key={recipe.id} recipe={recipe} />
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-24">
+              <div className="ad-space-sidebar mb-6">
+                AdSense: Sidebar 300x600 / 300x250
+              </div>
+
+              {/* Browse Categories */}
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <h3 className="font-display font-semibold text-xl mb-4">
+                  Browse Categories
+                </h3>
+                <ul className="space-y-3">
+                  {categories.slice(0, 6).map((c) => (
+                    <li key={c.slug}>
+                      <Link
+                        href={`/recipes/${c.slug}`}
+                        className="text-primary-600 hover:text-primary-700 flex justify-between items-center"
+                      >
+                        <span>{c.name}</span>
+                        <span className="text-sm text-gray-500">{c.recipeCount}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Ad Space - Before Footer */}
+      <div className="container-custom mb-8">
+        <div className="ad-space-content">
+          AdSense: Content Ad 336x280 / 300x250
+        </div>
+      </div>
+    </div>
+  );
+}
