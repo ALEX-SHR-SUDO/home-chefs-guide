@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 const categories = [
   { name: 'Breakfast & Brunch', slug: 'breakfast-brunch' },
@@ -16,6 +18,15 @@ const categories = [
   { name: 'International Cuisine', slug: 'international' },
 ];
 
+/** Tiny component that reads the ?q param and syncs it to the parent via callback. */
+function SearchParamSync({ onSync }: { onSync: (q: string) => void }) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    onSync(searchParams.get('q') ?? '');
+  }, [searchParams, onSync]);
+  return null;
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,6 +40,11 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50 no-print">
+      {/* Sync search box value with the ?q URL param when present */}
+      <Suspense fallback={null}>
+        <SearchParamSync onSync={setSearchQuery} />
+      </Suspense>
+
       {/* Ad Space - Header Banner */}
       <div className="ad-space-header container-custom">
         AdSense: Header Banner 728x90 / 320x50 (Mobile)

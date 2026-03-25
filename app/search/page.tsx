@@ -13,8 +13,8 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 
   return {
     title: query
-      ? `Search results for "${query}" | HomeChef`
-      : 'Search | HomeChef',
+      ? `Search results for "${query}"`
+      : 'Search',
     description: query
       ? `Find recipes matching "${query}" on HomeChef.`
       : 'Search for recipes on HomeChef.',
@@ -47,6 +47,22 @@ export default async function SearchPage({ searchParams }: PageProps) {
             <h1 className="text-5xl font-display font-bold mb-4">
               Search Recipes
             </h1>
+            <form action="/search" method="GET" className="flex mb-4">
+              <input
+                type="text"
+                name="q"
+                defaultValue={query}
+                placeholder="Search recipes..."
+                autoFocus={!query}
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-lg"
+              />
+              <button
+                type="submit"
+                className="bg-primary-600 text-white px-8 py-3 rounded-r-lg hover:bg-primary-700 transition-colors text-lg font-medium"
+              >
+                Search
+              </button>
+            </form>
             {query ? (
               <p className="text-gray-500">
                 {results.length}{' '}
@@ -55,7 +71,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
               </p>
             ) : (
               <p className="text-xl text-gray-600">
-                Enter a search term in the box above to find recipes.
+                Enter a search term above to find recipes.
               </p>
             )}
           </div>
@@ -77,7 +93,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
             {!query && (
               <div className="text-center py-12">
                 <p className="text-gray-600 text-lg">
-                  Use the search bar at the top of the page to find recipes.
+                  Use the search bar above to find recipes.
                 </p>
               </div>
             )}
