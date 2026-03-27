@@ -5,36 +5,43 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://home-chefs-guide.vercel.app';
-  
+  const sitePublishedDate = new Date('2024-01-15');
+
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: sitePublishedDate,
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: sitePublishedDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: sitePublishedDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/search`,
+      lastModified: sitePublishedDate,
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: sitePublishedDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-service`,
-      lastModified: new Date(),
+      lastModified: sitePublishedDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
@@ -43,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Category pages
   const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
     url: `${baseUrl}/recipes/${category.slug}`,
-    lastModified: new Date(),
+    lastModified: sitePublishedDate,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
