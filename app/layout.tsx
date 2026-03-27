@@ -46,6 +46,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'b4f2204c83c46dea',
+  },
 };
 
 export default function RootLayout({
