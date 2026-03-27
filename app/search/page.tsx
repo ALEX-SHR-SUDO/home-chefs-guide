@@ -1,29 +1,14 @@
-import { Metadata } from 'next';
+'use client';
+
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import RecipeCard from '@/components/RecipeCard';
 import { getAllRecipes, categories } from '@/lib/recipes';
 
-interface PageProps {
-  searchParams: Promise<{ q?: string }>;
-}
-
-export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
-  const { q } = await searchParams;
-  const query = q?.trim() ?? '';
-
-  return {
-    title: query
-      ? `Search results for "${query}"`
-      : 'Search',
-    description: query
-      ? `Find recipes matching "${query}" on HomeChef.`
-      : 'Search for recipes on HomeChef.',
-  };
-}
-
-export default async function SearchPage({ searchParams }: PageProps) {
-  const { q } = await searchParams;
-  const query = q?.trim() ?? '';
+function SearchResults() {
+  const searchParams = useSearchParams();
+  const query = searchParams.get('q')?.trim() ?? '';
 
   const allRecipes = getAllRecipes();
 
@@ -161,5 +146,13 @@ export default async function SearchPage({ searchParams }: PageProps) {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center"><p className="text-gray-600 text-lg">Loading search...</p></div>}>
+      <SearchResults />
+    </Suspense>
   );
 }
