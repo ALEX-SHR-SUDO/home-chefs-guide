@@ -253,7 +253,7 @@ export const allRecipes: Recipe[] = [
     "category": "Breakfast & Brunch",
     "categorySlug": "breakfast-brunch",
     "description": "Delicious shakshuka that's perfect for any occasion. This recipe combines amazing flavors with simple techniques. A family favorite that everyone will love!",
-    "image": "/images/recipes/Shakshuka.png",
+    "image": "/images/recipes/shakshuka.png",
     "prepTime": 18,
     "cookTime": 29,
     "totalTime": 47,
