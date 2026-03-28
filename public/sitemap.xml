@@ -2268,12 +2268,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://home-chefs-guide.vercel.app/recipes/international/russian-beef-stroganoff</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://home-chefs-guide.vercel.app/recipes/international/polish-pierogi</loc>
     <lastmod>2024-01-15</lastmod>

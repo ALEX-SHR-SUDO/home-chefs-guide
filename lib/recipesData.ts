@@ -17857,53 +17857,6 @@ export const allRecipes: Recipe[] = [
     "author": "HomeChef Team"
   },
   {
-    "id": "363",
-    "title": "Russian Beef Stroganoff",
-    "slug": "russian-beef-stroganoff",
-    "category": "International Cuisine",
-    "categorySlug": "international",
-    "description": "Delicious russian beef stroganoff that's perfect for any occasion. This recipe combines amazing flavors with simple techniques. A family favorite that everyone will love!",
-    "image": "/images/recipes/russian-beef-stroganoff.png",
-    "prepTime": 18,
-    "cookTime": 84,
-    "totalTime": 102,
-    "servings": 6,
-    "difficulty": "Easy",
-    "cuisine": "Asian",
-    "dietaryTags": [
-      "Dairy-Free",
-      "Low-Carb"
-    ],
-    "ingredients": [
-      "2 bell peppers, sliced",
-      "1 lb ground beef",
-      "1 cup breadcrumbs",
-      "1 cup breadcrumbs",
-      "2 tbsp lemon juice"
-    ],
-    "instructions": [
-      "Preheat oven to 375°F (190°C) and prepare your baking dish.",
-      "In a large bowl, mix together all dry ingredients until well combined.",
-      "In a separate bowl, whisk together wet ingredients until smooth.",
-      "Combine wet and dry ingredients, stirring until just mixed.",
-      "Heat oil in a large skillet over medium-high heat.",
-      "Add main ingredient to the pan and cook until golden brown.",
-      "Season with salt, pepper, and desired spices."
-    ],
-    "nutrition": {
-      "calories": 401,
-      "protein": 28,
-      "carbs": 73,
-      "fat": 30
-    },
-    "tips": [
-      "For best results, use fresh ingredients whenever possible.",
-      "This dish can be prepared ahead and reheated before serving."
-    ],
-    "datePublished": "2024-01-15",
-    "author": "HomeChef Team"
-  },
-  {
     "id": "364",
     "title": "Polish Pierogi",
     "slug": "polish-pierogi",
