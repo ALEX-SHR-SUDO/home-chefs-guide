@@ -112,6 +112,12 @@ export default function Header() {
         <div className="container-custom">
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-1 py-3 overflow-x-auto">
+            <Link
+              href="/recipes/all"
+              className="px-4 py-2 rounded-lg hover:bg-primary-100 hover:text-primary-700 whitespace-nowrap transition-colors font-semibold"
+            >
+              All Recipes
+            </Link>
             {categories.map((category) => (
               <Link
                 key={category.slug}
@@ -126,6 +132,13 @@ export default function Header() {
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
             <div className="md:hidden py-3 space-y-2">
+              <Link
+                href="/recipes/all"
+                className="block px-4 py-2 rounded-lg hover:bg-primary-100 hover:text-primary-700 transition-colors font-semibold"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                All Recipes
+              </Link>
               {categories.map((category) => (
                 <Link
                   key={category.slug}
