@@ -4,7 +4,7 @@ import { getAllRecipes, categories } from '@/lib/recipes';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://home-chefs-guide.vercel.app';
+  const baseUrl = 'https://easyhomechef.com';
   const sitePublishedDate = new Date('2024-01-15');
 
   // Static pages

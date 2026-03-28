@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://home-chefs-guide.vercel.app/sitemap.xml',
+    sitemap: 'https://easyhomechef.com/sitemap.xml',
   };
 }
