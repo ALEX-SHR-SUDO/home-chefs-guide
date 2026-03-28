@@ -10,13 +10,35 @@ export default function ContactPage() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to a backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError('Failed to send message. Please try again.');
+      }
+    } catch {
+      setError('Failed to send message. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -46,6 +68,12 @@ export default function ContactPage() {
               {submitted && (
                 <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg">
                   Thank you for your message! We'll get back to you soon.
+                </div>
+              )}
+
+              {error && (
+                <div className="mb-6 p-4 bg-red-100 text-red-800 rounded-lg">
+                  {error}
                 </div>
               )}
 
@@ -117,8 +145,8 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full md:w-auto">
-                  Send Message
+                <button type="submit" disabled={isLoading} className="btn-primary w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
