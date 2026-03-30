@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.easyhomechef.com"
+        }
+      ],
+      "destination": "https://easyhomechef.com/$1",
+      "permanent": true
+    }
+  ]
+}
