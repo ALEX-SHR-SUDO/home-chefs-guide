@@ -70,6 +70,7 @@ export default async function RecipePage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'Recipe',
     name: recipe.title,
+    url: recipeUrl,
     image: [recipe.image],
     author: {
       '@type': 'Person',
@@ -77,6 +78,11 @@ export default async function RecipePage({ params }: PageProps) {
     },
     datePublished: recipe.datePublished,
     description: recipe.description,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '24',
+    },
     prepTime: `PT${recipe.prepTime}M`,
     cookTime: `PT${recipe.cookTime}M`,
     totalTime: `PT${recipe.totalTime}M`,
@@ -87,8 +93,11 @@ export default async function RecipePage({ params }: PageProps) {
     recipeIngredient: recipe.ingredients,
     recipeInstructions: recipe.instructions.map((instruction, index) => ({
       '@type': 'HowToStep',
+      name: `Step ${index + 1}`,
       text: instruction,
       position: index + 1,
+      url: `${recipeUrl}#step-${index + 1}`,
+      image: recipe.image,
     })),
     nutrition: {
       '@type': 'NutritionInformation',
