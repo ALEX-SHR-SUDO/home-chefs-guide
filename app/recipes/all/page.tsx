@@ -6,6 +6,9 @@ import { getAllRecipes, categories } from '@/lib/recipes';
 export const metadata: Metadata = {
   title: 'All Recipes',
   description: 'Browse all 380+ recipes across every category — from breakfast and dinner to desserts, baking, and international cuisine.',
+  alternates: {
+    canonical: '/recipes/all',
+  },
   openGraph: {
     title: 'All Recipes | HomeChef',
     description: 'Browse all 380+ recipes across every category — from breakfast and dinner to desserts, baking, and international cuisine.',

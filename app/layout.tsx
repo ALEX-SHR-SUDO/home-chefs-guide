@@ -6,9 +6,6 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://easyhomechef.com'),
-  alternates: {
-    canonical: 'https://easyhomechef.com',
-  },
   title: {
     default: 'HomeChef - Delicious Recipes for Every Occasion',
     template: '%s | HomeChef'

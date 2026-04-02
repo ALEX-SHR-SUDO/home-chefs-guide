@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import RecipeCard from '@/components/RecipeCard';
 import { getAllRecipes, categories } from '@/lib/recipes';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   const allRecipes = getAllRecipes();
