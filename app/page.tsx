@@ -4,8 +4,25 @@ import RecipeCard from '@/components/RecipeCard';
 import { getAllRecipes, categories } from '@/lib/recipes';
 
 export const metadata: Metadata = {
+  title: 'HomeChef — Easy Recipes for Home Cooks | 380+ Dishes',
+  description: 'Find 380+ easy home cooking recipes: quick dinners, healthy meals, desserts, vegetarian and more. Step-by-step instructions with prep time and nutrition info.',
+  keywords: ['home cooking recipes', 'easy dinner recipes', 'quick meals', 'healthy recipes', 'desserts', 'vegetarian recipes', 'homechef'],
   alternates: {
     canonical: '/',
+  },
+  openGraph: {
+    title: 'HomeChef — Easy Recipes for Home Cooks',
+    description: 'Find 380+ easy home cooking recipes for every meal and occasion.',
+    url: 'https://easyhomechef.com',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'HomeChef Recipe Collection',
+      },
+    ],
   },
 };
 

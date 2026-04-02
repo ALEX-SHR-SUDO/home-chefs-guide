@@ -5,43 +5,49 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://easyhomechef.com';
-  const sitePublishedDate = new Date('2024-01-15');
+  const staticContentDate = new Date('2025-01-01');
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: sitePublishedDate,
+      lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: sitePublishedDate,
+      lastModified: staticContentDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: sitePublishedDate,
+      lastModified: staticContentDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/search`,
-      lastModified: sitePublishedDate,
+      lastModified: staticContentDate,
       changeFrequency: 'weekly',
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/recipes/all`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: sitePublishedDate,
+      lastModified: staticContentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-service`,
-      lastModified: sitePublishedDate,
+      lastModified: staticContentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
@@ -50,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Category pages
   const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
     url: `${baseUrl}/recipes/${category.slug}`,
-    lastModified: sitePublishedDate,
+    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));

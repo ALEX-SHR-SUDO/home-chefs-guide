@@ -81,11 +81,6 @@ export default async function RecipePage({ params }: PageProps) {
     },
     datePublished: recipe.datePublished,
     description: recipe.description,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '24',
-    },
     prepTime: `PT${recipe.prepTime}M`,
     cookTime: `PT${recipe.cookTime}M`,
     totalTime: `PT${recipe.totalTime}M`,
@@ -111,12 +106,26 @@ export default async function RecipePage({ params }: PageProps) {
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://easyhomechef.com' },
+      { '@type': 'ListItem', position: 2, name: recipe.category, item: `https://easyhomechef.com/recipes/${category}` },
+      { '@type': 'ListItem', position: 3, name: recipe.title, item: recipeUrl },
+    ],
+  };
+
   return (
     <>
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <div className="min-h-screen bg-gray-50">
