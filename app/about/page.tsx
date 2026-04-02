@@ -4,6 +4,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Learn about HomeChef and our mission to bring delicious recipes to home cooks everywhere.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

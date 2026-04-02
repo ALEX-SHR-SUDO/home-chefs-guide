@@ -35,6 +35,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: recipe.title,
     description: recipe.description,
     keywords: [recipe.title, recipe.category, recipe.cuisine, ...recipe.dietaryTags].join(', '),
+    alternates: {
+      canonical: `/recipes/${category}/${slug}`,
+    },
     openGraph: {
       title: `${recipe.title} | HomeChef`,
       description: recipe.description,

@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: category.name,
     description: category.description,
+    alternates: {
+      canonical: `/recipes/${categorySlug}`,
+    },
     openGraph: {
       title: `${category.name} | HomeChef`,
       description: category.description,
