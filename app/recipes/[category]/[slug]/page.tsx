@@ -116,9 +116,23 @@ export default async function RecipePage({ params }: PageProps) {
     ],
   };
 
+  // FAQ JSON-LD Schema (only if tips exist)
+  const faqSchema = recipe.tips.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: recipe.tips.map((tip, index) => ({
+      '@type': 'Question',
+      name: `Tip ${index + 1}: ${tip.length > 60 ? tip.substring(0, 60) + '...' : tip}`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: tip,
+      },
+    })),
+  } : null;
+
   return (
     <>
-      {/* JSON-LD Schema */}
+      {/* Recipe JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeSchema) }}
@@ -127,6 +141,14 @@ export default async function RecipePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      {/* FAQ JSON-LD Schema */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <div className="min-h-screen bg-gray-50">
         <article className="recipe-content">
