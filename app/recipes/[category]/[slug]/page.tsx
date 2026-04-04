@@ -34,9 +34,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: recipe.title,
     description: recipe.description,
+    authors: [{ name: recipe.author }],
     keywords: [recipe.title, recipe.category, recipe.cuisine, ...recipe.dietaryTags].join(', '),
     alternates: {
-      canonical: `/recipes/${category}/${slug}`,
+      canonical: `https://easyhomechef.com/recipes/${category}/${slug}`,
     },
     openGraph: {
       title: `${recipe.title} | HomeChef`,
@@ -62,9 +63,36 @@ export default async function RecipePage({ params }: PageProps) {
     );
   }
 
-  const relatedRecipes = getRecipesByCategory(category)
+  const allRecipes = getAllRecipes();
+
+  // Recipes from same category with shared dietary tags
+  const hasDietaryTags = recipe.dietaryTags.length > 0;
+  const sameCategoryWithTags = hasDietaryTags
+    ? getRecipesByCategory(category)
+        .filter(r => r.id !== recipe.id)
+        .filter(r => r.dietaryTags.some(tag => recipe.dietaryTags.includes(tag)))
+        .slice(0, 3)
+    : [];
+
+  const sameCategoryWithTagsIds = new Set(sameCategoryWithTags.map(r => r.id));
+
+  // If not enough, add from same category
+  const sameCategoryFallback = getRecipesByCategory(category)
     .filter(r => r.id !== recipe.id)
-    .slice(0, 3);
+    .filter(r => !sameCategoryWithTagsIds.has(r.id))
+    .slice(0, 3 - sameCategoryWithTags.length);
+
+  // If still not enough, add from other categories with shared tags
+  const excludedIds = new Set([...sameCategoryWithTagsIds, ...sameCategoryFallback.map(r => r.id)]);
+  const crossCategoryWithTags = hasDietaryTags
+    ? allRecipes
+        .filter(r => r.id !== recipe.id && r.categorySlug !== category)
+        .filter(r => r.dietaryTags.some(tag => recipe.dietaryTags.includes(tag)))
+        .filter(r => !excludedIds.has(r.id))
+        .slice(0, 3 - sameCategoryWithTags.length - sameCategoryFallback.length)
+    : [];
+
+  const relatedRecipes = [...sameCategoryWithTags, ...sameCategoryFallback, ...crossCategoryWithTags].slice(0, 3);
 
   const recipeUrl = `https://easyhomechef.com/recipes/${category}/${slug}`;
 
@@ -80,6 +108,7 @@ export default async function RecipePage({ params }: PageProps) {
       name: recipe.author,
     },
     datePublished: recipe.datePublished,
+    dateModified: recipe.datePublished,
     description: recipe.description,
     prepTime: `PT${recipe.prepTime}M`,
     cookTime: `PT${recipe.cookTime}M`,

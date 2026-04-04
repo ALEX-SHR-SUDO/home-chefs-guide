@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'HomeChef Privacy Policy - Learn how we collect, use, and protect your information.',
   alternates: {
-    canonical: '/privacy-policy',
+    canonical: 'https://easyhomechef.com/privacy-policy',
   },
 };
 

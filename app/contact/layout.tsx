@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description: "We'd love to hear from you! Send us a message.",
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://easyhomechef.com/contact',
   },
 };
 

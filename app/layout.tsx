@@ -75,6 +75,8 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+        <meta name="theme-color" content="#f43f5e" />
       </head>
       <body className="font-sans">
         <script
@@ -92,6 +94,24 @@ export default function RootLayout({
                   urlTemplate: 'https://easyhomechef.com/search?q={search_term_string}',
                 },
                 'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'HomeChef',
+              url: 'https://easyhomechef.com',
+              logo: 'https://easyhomechef.com/favicon.svg',
+              sameAs: [],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'customer support',
+                url: 'https://easyhomechef.com/contact',
               },
             }),
           }}
