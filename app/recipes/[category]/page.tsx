@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: category.name,
     description: category.description,
     alternates: {
-      canonical: `/recipes/${categorySlug}`,
+      canonical: `https://easyhomechef.com/recipes/${categorySlug}`,
     },
     openGraph: {
       title: `${category.name} | HomeChef`,

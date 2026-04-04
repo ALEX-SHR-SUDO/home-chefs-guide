@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'All Recipes',
   description: 'Browse all 380+ recipes across every category — from breakfast and dinner to desserts, baking, and international cuisine.',
   alternates: {
-    canonical: '/recipes/all',
+    canonical: 'https://easyhomechef.com/recipes/all',
   },
   openGraph: {
     title: 'All Recipes | HomeChef',

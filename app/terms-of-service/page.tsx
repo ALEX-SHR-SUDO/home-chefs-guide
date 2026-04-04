@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'HomeChef Terms of Service - Rules and guidelines for using our website.',
   alternates: {
-    canonical: '/terms-of-service',
+    canonical: 'https://easyhomechef.com/terms-of-service',
   },
 };
 
