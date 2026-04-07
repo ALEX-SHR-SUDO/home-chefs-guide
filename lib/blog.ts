@@ -200,13 +200,13 @@ export const blogPosts: BlogPost[] = [
       <p>Whether you are cooking for one on a quiet Tuesday evening or hosting a dinner party for twelve, sauces are your most versatile culinary tool. They add richness, brightness, depth, and complexity. They tie together the components of a dish and communicate the cook's intentions. In this guide, we will walk through the foundational sauces every home cook should know: how to make them, when to use them, and how to build your confidence one ladle at a time.</p>
 
       <h2>The Five French Mother Sauces</h2>
-      <p>Classical French cuisine, codified by chef Auguste Escoffier in the late nineteenth century, identified five "mother sauces" as the cornerstones of Western culinary tradition. Every sauce you have encountered in a French-inspired kitchen almost certainly derives from one of these five foundations:</p>
+      <p>Classical French cuisine, codified by chef Auguste Escoffier in the late-nineteenth-century culinary canon, identified five "mother sauces" as the cornerstones of Western culinary tradition. Every sauce you have encountered in a French-inspired kitchen almost certainly derives from one of these five foundations:</p>
       <ul>
         <li><strong>Béchamel</strong> — a white sauce made from milk thickened with a butter-and-flour roux</li>
         <li><strong>Velouté</strong> — a blond sauce made from light chicken, veal, or fish stock and a pale roux</li>
         <li><strong>Espagnole</strong> — a rich, dark brown sauce based on roasted bones, aromatics, and tomato paste</li>
         <li><strong>Hollandaise</strong> — a luxurious emulsified butter sauce enriched with egg yolks and lemon</li>
-        <li><strong>Sauce Tomat</strong> — a slow-cooked tomato sauce, the ancestor of every ragù and sugo you love</li>
+        <li><strong>Sauce Tomate</strong> — a slow-cooked tomato sauce, the ancestor of every ragù and sugo you love</li>
       </ul>
       <p>Each mother sauce is a template. Understand how it works and you unlock dozens of classic derivatives. Mastering even two or three of these will permanently change the way you cook.</p>
 
