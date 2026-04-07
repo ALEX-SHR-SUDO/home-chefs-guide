@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllRecipes, categories } from '@/lib/recipes';
+import { getAllBlogPosts } from '@/lib/blog';
 
 export const dynamic = 'force-static';
 
@@ -70,5 +71,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...recipePages];
+  // Blog pages
+  const allBlogPosts = getAllBlogPosts();
+  const blogPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    ...allBlogPosts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.datePublished),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ];
+
+  return [...staticPages, ...categoryPages, ...recipePages, ...blogPages];
 }
