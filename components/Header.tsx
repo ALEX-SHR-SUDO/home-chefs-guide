@@ -127,6 +127,12 @@ export default function Header() {
                 {category.name}
               </Link>
             ))}
+            <Link
+              href="/blog"
+              className="px-4 py-2 rounded-lg hover:bg-primary-100 hover:text-primary-700 whitespace-nowrap transition-colors font-semibold"
+            >
+              Blog
+            </Link>
           </div>
 
           {/* Mobile Navigation */}
@@ -149,6 +155,13 @@ export default function Header() {
                   {category.name}
                 </Link>
               ))}
+              <Link
+                href="/blog"
+                className="block px-4 py-2 rounded-lg hover:bg-primary-100 hover:text-primary-700 transition-colors font-semibold"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
             </div>
           )}
         </div>
