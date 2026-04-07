@@ -195,28 +195,56 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       'A great sauce can transform a simple ingredient into an extraordinary meal. Learn the foundational sauces every home cook should know.',
     content: `
-      <p>Sauces are the backbone of great cooking. Mastering a handful of core sauces will transform your home cooking and give you the flexibility to improvise confidently.</p>
+      <p>A great sauce has the power to turn a humble piece of chicken into something memorable, elevate a simple bowl of pasta into a restaurant-worthy dish, or transform a plain salad into something you crave every single day. Yet despite their transformative power, sauces intimidate many home cooks. The truth is, once you understand a handful of core techniques, making great sauces becomes intuitive — and endlessly rewarding.</p>
+
+      <p>Whether you are cooking for one on a quiet Tuesday evening or hosting a dinner party for twelve, sauces are your most versatile culinary tool. They add richness, brightness, depth, and complexity. They tie together the components of a dish and communicate the cook's intentions. In this guide, we will walk through the foundational sauces every home cook should know: how to make them, when to use them, and how to build your confidence one ladle at a time.</p>
 
       <h2>The Five French Mother Sauces</h2>
-      <p>Classical French cuisine identifies five "mother sauces" from which hundreds of variations are derived: Béchamel, Velouté, Espagnole, Hollandaise, and Sauce Tomat. Understanding these gives you a framework for endless creativity.</p>
+      <p>Classical French cuisine, codified by chef Auguste Escoffier in the late nineteenth century, identified five "mother sauces" as the cornerstones of Western culinary tradition. Every sauce you have encountered in a French-inspired kitchen almost certainly derives from one of these five foundations:</p>
+      <ul>
+        <li><strong>Béchamel</strong> — a white sauce made from milk thickened with a butter-and-flour roux</li>
+        <li><strong>Velouté</strong> — a blond sauce made from light chicken, veal, or fish stock and a pale roux</li>
+        <li><strong>Espagnole</strong> — a rich, dark brown sauce based on roasted bones, aromatics, and tomato paste</li>
+        <li><strong>Hollandaise</strong> — a luxurious emulsified butter sauce enriched with egg yolks and lemon</li>
+        <li><strong>Sauce Tomat</strong> — a slow-cooked tomato sauce, the ancestor of every ragù and sugo you love</li>
+      </ul>
+      <p>Each mother sauce is a template. Understand how it works and you unlock dozens of classic derivatives. Mastering even two or three of these will permanently change the way you cook.</p>
 
-      <h2>Béchamel (White Sauce)</h2>
-      <p>Made from butter, flour, and milk, béchamel is the base for cheese sauces, lasagne filling, and creamy gratins. Master the roux (butter + flour) and you'll have it down.</p>
+      <h2>Béchamel — The Versatile White Sauce</h2>
+      <p>Béchamel is the most accessible of the mother sauces and one of the most useful. At its simplest, it is made by cooking equal parts butter and flour together into a roux, then whisking in warm milk until the sauce becomes smooth and thick. The key is patience: add the milk gradually, whisking constantly to prevent lumps, and cook over medium-low heat until the sauce coats the back of a spoon.</p>
+      <p>Once you can make a reliable béchamel, your cooking options multiply dramatically. Add grated Gruyère or Parmesan to make a Mornay sauce — perfect for macaroni and cheese or a classic croque monsieur. Layer it generously into a <a href="https://easyhomechef.com/recipes/dinner/lasagna">classic lasagna</a> alongside a rich meat ragù for a dish that never fails to impress. Thin it slightly with cream and spoon it over chicken, baked potatoes, or bubbling gratins. Season it with freshly grated nutmeg, Dijon mustard, or white pepper to change its character entirely.</p>
+      <p>The most common mistake with béchamel is cooking the roux for too short a time, which leaves a raw flour taste in the finished sauce. Cook the butter and flour together for at least two full minutes before adding any liquid, stirring frequently as it gently bubbles.</p>
 
-      <h2>A Classic Tomato Sauce</h2>
-      <p>Sauté garlic in olive oil, add crushed tomatoes, season with salt and a pinch of sugar, and simmer for 20–30 minutes. This simple sauce works on pasta, pizza, and as a braising liquid.</p>
+      <h2>Classic Tomato Sauce — Simple and Endlessly Adaptable</h2>
+      <p>A truly great tomato sauce is one of the simplest and most satisfying things you can make. Start with good-quality crushed tomatoes — ideally San Marzano — and build flavour patiently. Sauté finely chopped garlic and onion in good olive oil over medium heat until soft and golden. Add the tomatoes, a pinch of sugar to balance the acidity, salt, and a few fresh basil leaves. Simmer uncovered for 25–35 minutes, stirring occasionally, until the sauce has thickened and the flavours have deepened into something rich and harmonious.</p>
+      <p>From this simple base, variations are endless. Add dried chilli flakes and capers for arrabbiata. Deglaze with red wine for a heartier sugo. Stir in cream and smoked pancetta for a tomato cream sauce. This sauce works beautifully over pasta, as a braising base for meats, or poured over breaded chicken. It is the essential component of a perfect <a href="https://easyhomechef.com/recipes/dinner/chicken-parmesan">Chicken Parmesan</a> — crispy, saucy, and deeply satisfying. Make a large batch and freeze it in portions for those busy weeknight evenings when time is short.</p>
 
-      <h2>Pan Sauces</h2>
-      <p>After searing meat, deglaze the pan with wine or stock, scraping up the browned bits. Reduce until slightly syrupy, whisk in a knob of butter, and you have a rich, restaurant-quality pan sauce in minutes.</p>
+      <h2>Pan Sauces — Restaurant Quality in Minutes</h2>
+      <p>Pan sauces are arguably the most underused tool in the home cook's repertoire. Whenever you sear a steak, chicken breast, or pork chop in a heavy skillet, you simultaneously create something valuable: the fond. Those golden-brown bits stuck to the bottom of the pan after cooking are concentrated flavour, and the technique of deglazing — adding liquid to the hot pan and scraping up the fond — transforms them into the base of a remarkable sauce in just minutes.</p>
+      <p>After removing your cooked protein to rest, pour off any excess fat from the pan, leaving just a thin film. Add your deglazing liquid — wine, stock, or a combination — and let it sizzle vigorously. Scrape up every last bit of fond as the liquid lifts it from the pan. Reduce the sauce by half, then swirl in one or two tablespoons of cold butter off the heat to finish. This technique — called <em>monter au beurre</em> — gives the sauce a glossy, velvety texture that is almost impossible to achieve any other way.</p>
+      <p>This method is the foundation of beloved classics such as <a href="https://easyhomechef.com/recipes/dinner/chicken-marsala">Chicken Marsala</a>, where Marsala wine and earthy mushrooms form the base, and <a href="https://easyhomechef.com/recipes/dinner/chicken-piccata">Chicken Piccata</a>, with its bright, sharp lemon and caper sauce. Add chopped shallots, a sprig of fresh thyme, or a splash of double cream to adapt the flavour to whatever protein you are cooking.</p>
 
-      <h2>Vinaigrettes</h2>
-      <p>The standard ratio is three parts oil to one part acid (vinegar or lemon juice). Add mustard, garlic, salt, and pepper. Whisk or shake vigorously. This keeps in the fridge for a week and dresses any salad beautifully.</p>
+      <h2>Vinaigrettes — The No-Cook Sauce</h2>
+      <p>Vinaigrette is the most democratic of all sauces — it requires no heat, no special equipment, and barely five minutes to make. The classic ratio is three parts oil to one part acid (vinegar or fresh lemon juice). Add a small spoonful of Dijon mustard, which acts as an emulsifier and helps the dressing hold together, along with salt, freshly cracked pepper, and any aromatics you like. Whisk vigorously or shake in a jar until the dressing is smooth and creamy-looking.</p>
+      <p>The beauty of vinaigrette is how effortlessly it adapts. Use red wine vinegar and a pinch of smoked paprika for a Spanish-inspired dressing. Try balsamic vinegar with a teaspoon of honey for something sweeter and more complex. Fresh tarragon, chives, or flat-leaf parsley make a wonderful herb vinaigrette. A well-made dressing transforms every salad it touches — from a simple green salad to a composed <a href="https://easyhomechef.com/recipes/lunch/caesar-salad">Caesar Salad</a> or a vibrant <a href="https://easyhomechef.com/recipes/lunch/pasta-salad">Pasta Salad</a>. Make a jar at the weekend and keep it in the refrigerator for up to two weeks.</p>
 
-      <h2>Herb Sauces</h2>
-      <p>Chimichurri, pesto, and salsa verde are all vibrant, fresh herb sauces that require no cooking. They're quick to make and bring brightness to grilled meats, fish, and vegetables.</p>
+      <h2>Fresh Herb Sauces — Pesto, Chimichurri, and Salsa Verde</h2>
+      <p>Fresh herb sauces are among the most vibrant, versatile preparations in cooking, and none of them requires heat. <strong>Pesto</strong>, originating in Genoa, is made by blending fresh basil, toasted pine nuts, garlic, Parmesan, and olive oil into a fragrant, intensely green sauce. It coats pasta beautifully, works as a sandwich spread, and can be stirred into risotto or spooned over roasted vegetables.</p>
+      <p><strong>Chimichurri</strong> is an Argentinian herb sauce built from flat-leaf parsley, garlic, red wine vinegar, and olive oil, with chilli flakes for warmth. It is the classic companion to grilled meats and brings extraordinary freshness to anything it touches. <strong>Salsa verde</strong> is its Italian cousin — a loose, pungent sauce of parsley, capers, anchovies, garlic, and lemon, sharp and savoury and endlessly adaptable.</p>
+      <p>All three pair brilliantly with fish. Try a generous spoonful of herb sauce over our <a href="https://easyhomechef.com/recipes/dinner/grilled-salmon">Grilled Salmon</a> for an effortless, impressive dinner. For a rich, creamy pasta experience on the other end of the spectrum, our <a href="https://easyhomechef.com/recipes/dinner/chicken-alfredo">Chicken Alfredo</a> showcases how a well-made cream sauce can be every bit as satisfying.</p>
 
-      <h2>Tips for Better Sauces</h2>
-      <p>Use good-quality stock, taste and adjust seasoning throughout, and don't rush reduction. A little patience produces far more depth of flavour than rushing on high heat.</p>
+      <h2>Common Mistakes to Avoid</h2>
+      <p>Even experienced cooks make predictable errors when making sauces. Here are the most common pitfalls to watch for:</p>
+      <ul>
+        <li><strong>Rushing the reduction:</strong> Turning up the heat to speed a sauce along breaks down its texture and can make it taste harsh and sharp. Reduce patiently over medium or medium-low heat.</li>
+        <li><strong>Adding butter to a boiling sauce:</strong> Always remove the pan from direct heat before finishing with butter. Boiling temperature will cause the fat to separate rather than emulsify into a smooth sauce.</li>
+        <li><strong>Not seasoning in layers:</strong> Great sauces are seasoned throughout the cooking process, not only at the end. Taste regularly and adjust as you go — this is how you build depth.</li>
+        <li><strong>Using poor-quality stock:</strong> Stock is the backbone of many sauces. If yours tastes thin and bland, your finished sauce will too. Use homemade stock when possible, or choose a quality store-bought version.</li>
+        <li><strong>Discarding the fond:</strong> Never rinse a pan immediately after searing meat — the caramelised residue left behind is liquid gold. Always deglaze it and use it.</li>
+      </ul>
+
+      <h2>Start Simple, Build Confidence</h2>
+      <p>Mastering sauces is one of the most rewarding investments you can make as a home cook. You do not need to tackle all five mother sauces at once. Start with one — perhaps a simple béchamel or a vibrant chimichurri — and cook with it until it feels natural. Then try another. Over time, these techniques will become part of your instinctive cooking vocabulary, and you will find yourself improvising sauces confidently without ever reaching for a recipe. The kitchen is yours to explore. One sauce at a time, you will get there.</p>
     `,
     author: 'HomeChef Team',
     datePublished: '2025-04-05',
